@@ -1,0 +1,20 @@
+.options {
+	background: #fefefe;
+	box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+	display: inline-block;
+	width: 100%;
+	&__title {
+		background-color: #141414;
+		padding: calc(25rem / 16) 0 calc(25rem / 16) calc(30rem / 16);
+
+		h2 {
+			color: #fff;
+			font-family: Montserrat;
+			font-size: 1.5rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+	}
+
+}

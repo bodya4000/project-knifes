@@ -1,0 +1,50 @@
+@use '../../../styles/colors.scss' as *;
+
+.header {
+	&__top {
+		padding: 1.5625rem 0;
+		max-height: 4.375rem;
+		background-color: $black;
+	}
+
+	&_pc {
+		&__container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&__profile {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			gap: 1rem;
+		}
+
+		&__active_link {
+			color: $yellow;
+		}
+	}
+
+	&_mob {
+		display: none;
+	}
+}
+
+@media (max-width: 47.999rem) {
+	.header {
+		&_pc {
+			display: none;
+		}
+		&_mob {
+			display: block;
+		}
+	}
+}
+
+.details {
+	&__cart {
+		position: relative;
+	}
+}

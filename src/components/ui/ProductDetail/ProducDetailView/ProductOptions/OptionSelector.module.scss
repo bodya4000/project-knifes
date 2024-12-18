@@ -1,0 +1,17 @@
+.option {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	&_name {
+		flex: 0 0 25%;
+	}
+
+	&_selector {
+		flex: 1 1 25%;
+	}
+
+	@media (max-width: calc(650px)) {
+		align-items: stretch;
+		flex-direction: column;
+	}
+}

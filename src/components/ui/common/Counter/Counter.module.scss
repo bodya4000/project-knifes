@@ -1,0 +1,26 @@
+@use '../../../../styles/colors.scss' as *;
+
+.container {
+	display: flex;
+}
+
+.base_button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-weight: 500;
+	font-size: 2rem;
+	width: calc(50rem / 16);
+	height: calc(50rem / 16);
+	padding: 1rem;
+}
+
+.button {
+	background-color: $black;
+	color: $white;
+}
+.view {
+	background-color: $white;
+	color: $black;
+}

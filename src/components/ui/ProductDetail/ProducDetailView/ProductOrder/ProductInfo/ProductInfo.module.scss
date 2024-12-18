@@ -1,0 +1,30 @@
+.item {
+	display: flex;
+	align-items: center;
+	gap: calc(40rem / 16);
+
+	&_value {
+		color: rgba(20, 20, 20, 0.5);
+		font-family: Montserrat;
+		font-size: calc(18rem / 16);
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		flex: 0 1 70;
+
+		&:not(:last-child) {
+			margin-bottom: 0.625rem;
+		}
+	}
+
+	&_key {
+		text-transform: capitalize;
+		&:not(:last-child) {
+			margin-bottom: 0.625rem;
+		}
+	}
+
+	&_keys {
+
+	}
+}

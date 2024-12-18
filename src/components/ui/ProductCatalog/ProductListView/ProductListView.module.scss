@@ -1,0 +1,36 @@
+.wrapper {
+	padding-left: calc(20rem / 16);
+
+	@media (max-width: calc(1700rem/16)) {
+		padding-left: calc(10rem / 16);
+	}
+	@media (max-width: calc(767rem/16)) {
+		padding-left: 0;
+	}
+}
+
+.products {
+	display: flex;
+	align-self: flex-start;
+	flex-wrap: wrap;
+
+	row-gap: calc(20rem / 16);
+	& > * {
+		flex: 0 0 20%;
+		transition: scale 0.2s ease 0.02s;
+
+		@media (max-width: calc(2000rem/16)) {
+			flex: 0 0 33%;
+		}
+
+		@media (max-width: calc(660rem/16)) {
+			flex: 0 0 50%;
+		}
+
+		&:hover {
+			position: relative;
+			z-index: 500;
+			scale: 1.05;
+		}
+	}
+}

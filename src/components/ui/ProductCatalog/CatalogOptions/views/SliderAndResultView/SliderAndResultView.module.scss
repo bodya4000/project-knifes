@@ -1,0 +1,36 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	transition: height 0.5s ease;
+	
+}
+
+.result {
+	&__body {
+		display: flex;
+		margin-bottom: calc(20rem / 16);
+	}
+
+	&__view {
+		flex: 0 0 100%;
+		max-width: 50%;
+		text-align: center;
+		border: 1px solid #cbcbcb;
+		padding: 7px 10px;
+		color: #141414;
+		font-family: Montserrat;
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		user-select: none;
+		&:last-child {
+			border-left: none;
+		}
+	}
+}
+
+.slider {
+	height: 20px;
+}

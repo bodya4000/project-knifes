@@ -1,0 +1,16 @@
+.catalog_header {
+	padding: calc(20rem/16) 0;
+
+	&__title {
+		color: #141414;
+		font-family: Montserrat;
+		font-size: 2rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+	}
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

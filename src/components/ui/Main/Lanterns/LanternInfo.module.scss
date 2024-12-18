@@ -1,0 +1,67 @@
+.lantern {
+	flex: 1 1 45%;
+	background: #fff;
+	box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+
+	@media (max-width: calc(965rem / 16)) {
+		flex: 1 0 100%;
+	}
+
+	&__container {
+		padding: calc(40rem / 16) 0 calc(10rem / 16) calc(18rem / 16);
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			'title image'
+			'text image'
+			'button image';
+		gap: calc(20rem / 16);
+		grid-template-rows: calc(100rem / 16) calc(50rem / 16) calc(100rem / 16);
+		align-items: center;
+		@media (max-width: calc(1010rem/16)) {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				'title'
+				'text'
+				'image'
+				'button';
+			grid-template-rows: auto;
+		}
+	}
+
+	&__title {
+		font-size: 2rem;
+		font-weight: 600;
+		grid-area: title;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__text {
+		font-weight: 600;
+		line-height: 140%;
+		font-size: calc(18rem / 16);
+		grid-area: text;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__button {
+		grid-area: button;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__image {
+		grid-area: image;
+		max-width: 100%;
+		height: auto;
+		object-fit: cover;
+
+		@media (max-width: calc(1010rem/16)) {
+			img {
+				height: calc(140rem / 16);
+			}
+		}
+	}
+}

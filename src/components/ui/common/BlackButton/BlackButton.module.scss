@@ -1,0 +1,26 @@
+@use '../../../../styles/colors.scss' as *;
+
+.button {
+	position: relative;
+	z-index: 300;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	// flex: 0 1 228px;
+	padding: 0.3rem;
+	height: calc(56rem / 16);
+
+	border-radius: 3px;
+	background: $black;
+	box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.3);
+
+	color: #fff;
+	font-size: calc(20rem / 16);
+	font-style: normal;
+	font-weight: 600;
+	line-height: 230%;
+
+	cursor: pointer;
+}

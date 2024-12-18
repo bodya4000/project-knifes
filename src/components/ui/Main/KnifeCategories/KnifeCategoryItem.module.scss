@@ -1,0 +1,85 @@
+@use '../../../../styles/colors.scss' as *;
+
+.knife_category {
+	flex: 0 1 32%;
+	box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+
+	@media (max-width: calc(1300rem/16)) {
+		flex: 0 1 47%;
+	}
+
+	@media (max-width: 49.99rem) {
+		flex: 0 0 100%;
+		max-height: calc(338rem / 16);
+	}
+
+	&__container {
+		padding: calc(30rem / 16) 0 0 1.25rem;
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__info {
+		flex: 0 1 auto;
+		display: flex;
+		gap: calc(30rem / 16);
+
+		@media (max-width: 49.99em) {
+			flex-direction: column;
+			align-items: center;
+			gap: calc(18rem / 16);
+		}
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: 0.625rem;
+		flex: 1 1 auto;
+
+		@media (max-width: 49.99em) {
+			gap: 0.3rem;
+		}
+
+		li {
+			color: #000;
+			font-family: Montserrat;
+			font-size: calc(18rem / 16);
+			font-style: normal;
+			font-weight: 500;
+			line-height: 190%;
+			position: relative;
+			padding: 0 0 0 0.625rem;
+			&::before {
+				content: '';
+				position: absolute;
+				background-color: $yellow;
+				border-radius: 50%;
+				width: 3px;
+				height: 4px;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	&__img {
+		flex: 0 1 auto;
+		justify-content: right;
+		position: relative;
+		bottom: 1rem;
+		img {
+			max-height: calc(200rem / 16);
+			margin: 0;
+			@media (max-width: 49.99em) {
+				max-height: calc(80rem / 16);
+				position: relative;
+				top: 1rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+@use '../../../../styles/colors.scss' as *;
+
+.drawer {
+	color: $white;
+	background-color: $black;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 500;
+	height: 100vh;
+	width: 85vw;
+
+	transition: right 0.25s ease-in-out;
+
+	&__container {
+		padding: 1.5rem 0.7rem 1.5rem 1.25rem;
+	}
+
+	&__close {
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 1.5rem;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+}

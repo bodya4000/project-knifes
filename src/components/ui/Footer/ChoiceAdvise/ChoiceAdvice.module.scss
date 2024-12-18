@@ -1,0 +1,57 @@
+@use '../../../../styles/colors.scss' as *;
+
+.advice {
+	position: relative;
+	z-index: 1000;
+	color: white;
+
+	&__bg {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: 0;
+		opacity: 0.8;
+	}
+
+	&__container {
+		position: relative;
+		z-index: 1000;
+		padding: calc(60rem / 16) calc(20rem / 16);
+
+		@media (max-width: calc(1150rem/16)) {
+			padding: calc(20rem / 16) calc(20rem / 16);
+		}
+	}
+
+	&__title {
+		color: $yellow;
+		font-family: Montserrat;
+		font-size: 2rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 112%;
+		letter-spacing: 0.72px;
+		text-align: center;
+
+		margin: 0 0 calc(40rem / 16) 0;
+	}
+
+	&__text {
+		color: silver;
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: 1.2rem;
+			}
+		}
+
+		&_show_more {
+			color: $white;
+			display: none;
+			margin-top: 1.5rem;
+			@media (max-width: calc(767rem/16)) {
+				display: block;
+			}
+		}
+	}
+}

@@ -1,0 +1,106 @@
+@use '../../../styles/colors.scss' as *;
+
+.footer {
+	background: #141414;
+
+	&__top {
+		padding: calc(100rem / 16) 0 calc(30rem / 16) 0;
+
+		@media (max-width: calc(1150rem/16)) {
+			padding: calc(20rem / 16) 0 calc(30rem / 16) 0;
+		}
+	}
+	&__bottom {
+		padding: calc(35rem / 16) 0 calc(30rem / 16) 0;
+
+		&_icons {
+			margin-right: 0.625rem;
+		}
+	}
+
+	&__block {
+		display: flex;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+		gap: calc(30rem / 16);
+		@media (max-width: calc(888rem/16)) {
+			flex-wrap: wrap;
+			column-gap: calc(100rem / 16);
+			justify-content: space-between;
+		}
+		@media (max-width: calc(588rem/16)) {
+			justify-content: center;
+		}
+		&_column {
+			flex: 0 1 24%;
+			display: flex;
+			flex-direction: column;
+			& > a:not(:first-child) {
+				color: rgba(255, 255, 255, 0.8);
+				font-size: calc(18rem / 16);
+				font-style: normal;
+				font-weight: 500;
+				line-height: 150%;
+				transition: color 0.12s ease-in 0s;
+
+				display: flex;
+
+				&:hover {
+					color: $yellow;
+				}
+
+				span {
+					display: inline;
+					color: $yellow;
+				}
+			}
+
+			& > *:first-child {
+				margin-bottom: calc(20rem / 16);
+				color: $white;
+				pointer-events: none;
+			}
+			@media (max-width: calc(888rem/16)) {
+				padding: calc(5rem / 16) 0;
+				flex: 0 0 40%;
+			}
+			@media (max-width: calc(588rem/16)) {
+				padding: calc(5rem / 16) 0;
+				flex: 1 0 40%;
+			}
+		}
+	}
+
+	&__email_subscribe {
+		color: rgba(255, 255, 255, 0.8);
+		font-size: calc(18rem / 16);
+		font-style: normal;
+		font-weight: 500;
+		line-height: 150%;
+		padding: calc(10rem / 16) 0;
+	}
+
+	&__rights {
+		margin: calc(30rem / 16) 0 calc(68rem / 16) 0;
+		color: rgba(255, 255, 255, 0.8);
+		font-size: calc(14rem / 16);
+		font-style: normal;
+		font-weight: 500;
+		line-height: 192%;
+
+		display: flex;
+		justify-content: space-between;
+
+		@media (max-width: calc(588rem/16)) {
+			justify-content: center;
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+	}
+
+	&__info {
+		flex: 0 1 calc(800rem / 16);
+		@media (max-width: calc(588rem/16)) {
+			flex: 0 1 auto;
+		}
+	}
+}

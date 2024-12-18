@@ -1,0 +1,24 @@
+.product {
+	padding: calc(80rem / 16) 0;
+	@media (max-width: calc(767px)) {
+		padding: calc(20rem / 16) 0;
+	}
+	&__details {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: calc(20rem/16);
+		& > * {
+			flex: 0 1 50%;
+			
+			&:not(:last-child) {
+				@media (max-width: calc(767px)) {
+					margin-bottom: calc(20rem/16);
+				}
+			}
+		}
+
+		@media (max-width: calc(767px)) {
+			display: block;
+		}
+	}
+}

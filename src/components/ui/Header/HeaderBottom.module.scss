@@ -1,0 +1,168 @@
+@use '../../../styles/colors.scss' as *;
+
+.header__bottom {
+	padding: 2rem 0;
+	background-color: $white_2;
+
+	&_body {
+		display: flex;
+		gap: 1.5rem;
+		align-items: center;
+	}
+
+	&_logo {
+		flex: 1 1 calc(140rem / 16);
+		font-size: 1.5rem;
+		font-weight: 700;
+		text-decoration: underline;
+	}
+
+	&_search {
+		font-size: calc(14rem / 16);
+		padding: calc(12rem / 16) calc(20rem / 16);
+		flex: 1 1 calc(350rem / 16);
+		display: flex;
+		gap: 0.625rem;
+
+		border-radius: 3px;
+		border: 1px solid rgba(4, 4, 4, 0.5);
+
+		background-color: rgba(7, 7, 7, 0.03);
+	}
+
+	&_details {
+		flex: 1 1 auto;
+		gap: 2.5rem;
+
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	@media (max-width: calc(1170rem/16)) {
+		&_details {
+			gap: 1.5rem;
+		}
+		&_search {
+			flex: 1 1 calc(200rem / 16);
+		}
+	}
+	@media (max-width: calc(980rem/16)) {
+		&_details {
+			gap: 0.625rem;
+		}
+	}
+
+	@media (max-width: 47.999em) {
+		&_search {
+			display: none;
+		}
+		&_details {
+			display: none;
+		}
+		&_logo {
+			font-size: 2.5rem;
+		}
+	}
+}
+
+.details {
+	&__location {
+		display: flex;
+		gap: 0.625rem;
+		align-items: center;
+		justify-content: center;
+
+		font-weight: 600;
+		font-size: calc(18rem / 16);
+	}
+
+	&__phone {
+		display: flex;
+		gap: 1rem;
+		align-items: start;
+		&_number {
+			&:not(:last-child) {
+				margin-bottom: 0.1rem;
+			}
+
+			color: #000;
+			font-size: calc(18rem / 16);
+			font-style: normal;
+			font-weight: 600;
+			line-height: normal;
+		}
+
+		&_book {
+			color: $yellow;
+			font-size: calc(18rem / 16);
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+
+		&_img {
+			position: relative;
+			top: 0.3rem;
+		}
+
+		@media (max-width: calc(980rem/16)) {
+			&_number {
+				font-size: calc(14rem / 16);
+			}
+			&_book {
+				font-size: calc(14rem / 16);
+			}
+		}
+	}
+
+	@media (max-width: calc(980rem/16)) {
+		&__favorites {
+			display: none;
+		}
+	}
+
+	&__cart {
+		position: relative;
+		z-index: 20000;
+		&_counter {
+			position: absolute;
+			top: 0;
+			right: -1px;
+			width: 15px;
+			height: 15px;
+			background-color: $yellow;
+			border-radius: 50%;
+			font-size: 0.5rem;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			color: $white;
+		}
+	}
+
+	&__book {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+
+		&_total {
+			color: #000;
+		}
+
+		&_link {
+			color: $yellow;
+		}
+
+		@media (max-width: calc(980rem/16)) {
+			&_info {
+				display: none;
+			}
+		}
+	}
+}

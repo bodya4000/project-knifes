@@ -1,0 +1,23 @@
+.title {
+	margin-bottom: calc(30rem / 16);
+	@media (max-width: 49.99em) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: calc(18rem / 16);
+	}
+	h3 {
+		color: #000;
+		font-size: calc(24rem / 16);
+		font-style: normal;
+		font-weight: 600;
+		line-height: 140%;
+		margin-bottom: 1rem;
+	}
+
+	&_underline {
+		width: calc(68rem / 16);
+		height: 2px;
+		background: #e8aa31;
+	}
+}

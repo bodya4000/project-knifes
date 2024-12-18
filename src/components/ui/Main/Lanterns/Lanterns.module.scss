@@ -1,0 +1,12 @@
+.lanterns {
+	padding: 0 0 calc(120rem / 16) 0;
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: calc(40rem / 16);
+
+		@media (max-width: calc(1010rem/16)) {
+			grid-template-columns: 1fr;
+		}
+	}
+}

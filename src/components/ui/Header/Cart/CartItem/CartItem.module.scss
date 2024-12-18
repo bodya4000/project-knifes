@@ -1,0 +1,56 @@
+@use '../../../../../styles/colors.scss' as *;
+
+.item {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+
+	padding: 0.625rem 1rem;
+	&:not(:last-child) {
+		border-bottom: 1px solid $black;
+	}
+	&__img {
+		height: calc(100rem / 16);
+		border: 2px solid $black;
+		border-radius: 10px;
+		position: relative;
+		z-index: 1000;
+		img {
+			height: calc(80rem / 16);
+			object-fit: cover;
+			position: absolute;
+			z-index: 0;
+		}
+	}
+
+	&__details {
+		min-width: calc(200rem / 16);
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+	}
+
+	&__name {
+		font-weight: 600;
+		color: $yellow;
+		font-size: 1.2rem;
+	}
+
+	&__count {
+		padding: 0.2rem 0;
+		font-size: 0.5rem;
+		display: flex;
+		justify-content: space-between;
+
+		& > * {
+			max-height: calc(10rem / 16);
+			width: calc(20rem / 16);
+		}
+	}
+
+	&__price {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}

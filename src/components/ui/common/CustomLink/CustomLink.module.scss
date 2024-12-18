@@ -1,0 +1,12 @@
+@use '../../../../styles/colors.scss' as *;
+
+.link {
+	display: flex;
+	color: $white;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	cursor: pointer;
+
+	transition: all 0.24s ease 0s;
+}

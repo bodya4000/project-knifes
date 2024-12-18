@@ -1,0 +1,14 @@
+._container {
+	display: block;
+	max-width: 98.75rem;
+	margin: 0 auto;
+	padding: 0 2.5rem;
+}
+
+._wrapper {
+	min-height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+}

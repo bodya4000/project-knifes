@@ -1,0 +1,24 @@
+.menu {
+	&_pc {
+		&__list {
+			display: flex;
+			gap: 3.75rem;
+		}
+	}
+
+	&_mob {
+		&__list {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+}
+
+@media (max-width: 63.99375em) {
+	.menu_pc {
+		&__list {
+			gap: 1.5rem;
+		}
+	}
+}

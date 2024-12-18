@@ -1,0 +1,129 @@
+.order {
+	padding: calc(30rem / 16);
+	box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+
+	@media (max-width: calc(767px)) {
+		padding: 15px 10px;
+	}
+	&__header {
+		padding-bottom: calc(30rem / 16);
+		border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+		@media (max-width: calc(767px)) {
+			padding: 15px 10px;
+		}
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+
+		@media (max-width: calc(650px)) {
+			flex-direction: column;
+			align-items: stretch;
+			gap: 10px;
+		}
+	}
+
+	&__name {
+		color: #141414;
+		font-family: Montserrat;
+		font-size: 2rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+	}
+
+	&__iteractivity {
+		display: flex;
+		align-items: center;
+		flex: 1 1 auto;
+		display: flex;
+		justify-content: flex-end;
+		gap: 0.625rem;
+
+		@media (max-width: calc(650px)) {
+			justify-content: flex-start;
+
+		}
+	}
+
+	&__in_stock {
+		color: #24ad53;
+		font-family: Montserrat;
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		margin-top: 1rem;
+	}
+
+	&__product_info {
+		padding: calc(30rem / 16) 0;
+		border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+		@media (max-width: calc(767px)) {
+			padding: 15px 10px;
+		}
+
+		@media (max-width: calc(450px)) {
+			display: none;
+		}
+	}
+
+	&__options {
+		display: flex;
+		flex-direction: column;
+		gap: calc(10rem / 16);
+		padding: calc(30rem / 16) 0;
+		border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+		@media (max-width: calc(767px)) {
+			padding: 15px 10px;
+		}
+	}
+
+	&__bottom {
+		padding: calc(30rem / 16) 0 0 0;
+		@media (max-width: calc(767px)) {
+			padding: 15px 10px;
+		}
+	}
+
+	&__price {
+		color: #000;
+		font-family: Montserrat;
+		font-size: calc(30rem / 16);
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+	}
+
+	&__cart {
+		padding: calc(30rem / 16) 0 0 0;
+		display: flex;
+		@media (max-width: calc(767px)) {
+			padding: 15px 10px;
+		}
+
+		@media (max-width: calc(1600px)) {
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+
+		&_btns {
+			flex: 1 1 auto;
+			display: flex;
+			justify-content: flex-end;
+			gap: calc(20rem / 16);
+
+			@media (max-width: calc(1600px)) {
+				justify-content: flex-start;
+			}
+				@media (max-width: calc(650px)) {
+					flex-direction: column;
+					&>* {
+						max-height: 80px;
+					}
+				}
+		}
+	}
+}

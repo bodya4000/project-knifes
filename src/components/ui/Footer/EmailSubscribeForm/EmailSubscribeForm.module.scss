@@ -1,0 +1,44 @@
+@use '../../../../styles/colors.scss' as *;
+
+.form {
+	&__top {
+		display: flex;
+		align-items: stretch;
+	}
+
+	&__input {
+		max-width: calc(375rem / 16);
+		padding: calc(15rem / 16) calc(20rem / 16);
+		flex-shrink: 0;
+		border-radius: 3px;
+		background: rgba(255, 255, 255, 0.05);
+
+		color: rgba(255, 255, 255, 0.52);
+		font-family: Montserrat;
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+
+		border: 1px solid $white;
+	}
+
+	&__submit {
+		padding: calc(20rem / 16);
+		background-color: $yellow;
+		position: relative;
+		right: 2px;
+	}
+
+	&__checkbox {
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 137%;
+		margin-top: calc(22rem / 16);
+
+		display: flex;
+		gap: calc(10rem / 16);
+	}
+}

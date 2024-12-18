@@ -1,0 +1,28 @@
+@use '../../../../styles/colors.scss' as *;
+
+.starRating {
+	font-size: 2rem;
+	position: relative;
+	display: inline-block;
+	color: #ccc;
+}
+
+.starRatingOuter::before {
+	content: '★★★★★';
+	display: block;
+}
+
+.starRatingInner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	color: $yellow;
+}
+
+.starRatingInner::before {
+	content: '★★★★★';
+	display: block;
+}
