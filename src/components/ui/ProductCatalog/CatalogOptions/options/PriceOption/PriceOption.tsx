@@ -1,7 +1,7 @@
 import { FC, memo, useState } from 'react';
 
 import { useDispatch } from 'react-redux';
-import useCatalogOptionSelector from '../../../../../../hooks/useSelectors/useCatalogOptionSelector';
+import useCatalogOptionSelector from '../../../../../../hooks/useCatalogOptionSelector';
 import { setPrice } from '../../../../../../store/catalog';
 import { debounceFunction } from '../../../../../../utils/CatalogUtills';
 import CustomImage from '../../../../common/CustomImage/CustomImage';

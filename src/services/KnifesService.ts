@@ -1,8 +1,8 @@
-import axios from 'axios';
 import { IKnife, IKnifeDetail, IKnifeOptionsRequest } from '../models/Knife';
+import AxiosService from './AxiosService';
 
 class KnifesService {
-	private URL = 'http://localhost:8081/knives';
+	private URL = '/knives';
 
 	private __parseQueryParamObjToString = (
 		params: Record<string, string | number | boolean>
@@ -22,14 +22,14 @@ class KnifesService {
 		params: Record<string, string | number | boolean>
 	) {
 		const queryParamsString = this.__parseQueryParamObjToString(params);
-		return axios.post<{ knives: IKnife[]; totalPages: number }>(
+		return AxiosService.post<{ knives: IKnife[]; totalPages: number }>(
 			`${this.URL}${queryParamsString}`,
 			body
 		);
 	}
 
 	public async getKniveById(id: number) {
-		return axios.get<IKnifeDetail>(`${this.URL}/${id}`);
+		return AxiosService.get<IKnifeDetail>(`${this.URL}/${id}`);
 	}
 }
 

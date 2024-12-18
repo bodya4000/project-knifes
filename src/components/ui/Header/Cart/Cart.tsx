@@ -1,13 +1,12 @@
 import { FC } from 'react';
-import useCartSelector from '../../../../hooks/useSelectors/useCartSelector';
+import useCartSelector from '../../../../hooks/useCartSelector';
 
 import BlackButton from '../../common/BlackButton/BlackButton';
 import styles from './Cart.module.scss';
 import CartItem from './CartItem/CartItem';
 
-interface Props {}
 
-const Cart: FC<Props> = ({}) => {
+const Cart: FC = () => {
 	const { products, totalPrice } = useCartSelector();
 	return (
 		<div className={styles.cart}>

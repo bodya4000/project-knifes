@@ -5,9 +5,8 @@ import { Outlet } from 'react-router-dom';
 import common from '../../styles/common.module.scss';
 import Footer from '../ui/Footer/Footer';
 
-interface Props {}
 
-const Layout: FC<Props> = ({}) => {
+const Layout: FC = () => {
 	return (
 		<div className={common._wrapper}>
 			<Header />

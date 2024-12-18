@@ -8,9 +8,7 @@ import EmailSubscribeForm from './EmailSubscribeForm/EmailSubscribeForm';
 import styles from './Footer.module.scss';
 import FooterColumn from './FooterColumn';
 
-interface Props {}
-
-const Footer: FC<Props> = () => {
+const Footer: FC = () => {
 	return (
 		<footer className={styles.footer}>
 			<ChoiceAdvice />

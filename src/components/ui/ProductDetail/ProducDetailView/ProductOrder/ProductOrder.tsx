@@ -12,6 +12,8 @@ import FavoritiesButton from '../../../common/FavoritesButton/FavoritiesButton';
 import StarsRating from '../../../common/StarsRating/StarsRating';
 import ProductInfo from './ProductInfo/ProductInfo';
 import styles from './ProductOrder.module.scss';
+import NotificationsService from '../../../../../services/NotificationsService';
+
 
 interface Props {
 	productData: IKnifeDetail;
@@ -34,6 +36,7 @@ const ProductOrder: FC<Props> = ({ productData }) => {
 			})
 		);
 		navigate(-1);
+		NotificationsService.success("Added to cart!")
 	};
 
 	const productInfo = parseDataInfoArrayWithKeysAndValue(productData);

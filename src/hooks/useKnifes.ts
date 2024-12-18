@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useEffect } from 'react';
 import knifesService from '../services/KnifesService';
-import useCatalogOptionSelector from './useSelectors/useCatalogOptionSelector';
+import useCatalogOptionSelector from './useCatalogOptionSelector';
 
 const useKnifes = () => {
 	const data = useCatalogOptionSelector();

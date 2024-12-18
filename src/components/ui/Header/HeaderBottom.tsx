@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 
 import { Link } from 'react-router-dom';
-import useCartSelector from '../../../hooks/useSelectors/useCartSelector';
+import useCartSelector from '../../../hooks/useCartSelector';
 import common from '../../../styles/common.module.scss';
 import CustomImage from '../common/CustomImage/CustomImage';
 import CustomInput from '../common/CustomInput/CustomInput';

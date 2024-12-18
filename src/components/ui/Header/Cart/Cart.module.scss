@@ -15,6 +15,7 @@
 		max-height: calc(400rem / 16);
 		overflow-y: auto;
 		scrollbar-width: thin;
+		overscroll-behavior: contain;
 
 		.cart__items::-webkit-scrollbar {
 			width: 8px;
