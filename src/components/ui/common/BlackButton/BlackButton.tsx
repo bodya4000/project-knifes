@@ -1,35 +1,46 @@
 import { FC } from 'react';
-
 import { Link } from 'react-router-dom';
 import styles from './BlackButton.module.scss';
 
 interface Props {
+	submit?: boolean;
 	text: string;
 	to?: string;
-
-	onClick: () => void;
+	onClick?: () => void;
 	propsStyles?: string;
+	disabled?: boolean;
 }
 
-const BlackButton: FC<Props> = ({ text, to, onClick, propsStyles }) => {
+const BlackButton: FC<Props> = ({
+	text,
+	to,
+	onClick,
+	propsStyles,
+	submit,
+	disabled,
+}) => {
+	const buttonClassName = `${styles.button} ${propsStyles || ''}`;
+
+	if (to) {
+		return (
+			<Link
+				className={`${buttonClassName} ${disabled ? styles.disabled : ''}`}
+				to={to}
+			>
+				{text}
+			</Link>
+		);
+	}
+
 	return (
-		<div
+		<button
+			disabled={disabled ? true : false}
+			type={submit ? 'submit' : 'button'}
 			onClick={onClick}
-			className={`${styles.button} ${propsStyles ? propsStyles : ''}`}
+			className={`${buttonClassName} ${disabled ? styles.disabled : ''}`}
 		>
-			{to ? (
-				<Link
-					className={`${styles.button} ${propsStyles ? propsStyles : ''}`}
-					to={to}
-				>
-					{text}
-				</Link>
-			) : (
-				<div className={`${styles.button} ${propsStyles ? propsStyles : ''}`}>
-					{text}
-				</div>
-			)}
-		</div>
+			{text}
+		</button>
 	);
 };
 

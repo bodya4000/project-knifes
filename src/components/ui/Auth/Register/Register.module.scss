@@ -1,0 +1,29 @@
+@use '../../../../styles/colors.scss' as *;
+
+.login {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login_body {
+	min-width: calc(300rem / 16);
+	display: flex;
+	flex-direction: column;
+	gap: calc(40rem / 16);
+}
+
+.login_links {
+	display: flex;
+	gap: 10px;
+	justify-content: space-between;
+	word-wrap: break-word;
+}
+
+.login_link {
+	color: $black;
+	&:hover {
+		color: $yellow;
+	}
+}
