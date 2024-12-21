@@ -4,7 +4,7 @@ import {
 	SORT_OPTION_DETAILS,
 	SORT_OPTIONS,
 } from '../../../../../../enums/SORT_OPTIONS';
-import useCatalogOptionSelector from '../../../../../../hooks/useSelectors/useCatalogOptionSelector';
+import useCatalogOptionSelector from '../../../../../../hooks/useCatalogOptionSelector';
 import { setSort } from '../../../../../../store/catalog';
 import CustomSelector from '../../../../common/CustomSelector/CustomSelector';
 

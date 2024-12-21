@@ -1,21 +1,24 @@
 import { FC } from 'react';
-import Header from '../ui/Header/Header';
-
 import { Outlet } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import common from '../../styles/common.module.scss';
 import Footer from '../ui/Footer/Footer';
+import Header from '../ui/Header/Header';
+import { Auth } from './Auth/Auth'
 
-interface Props {}
+const Layout: FC = () => {
+	const { isAuthenticated } = useAuth();
 
-const Layout: FC<Props> = ({}) => {
+	if (!isAuthenticated) {
+		return <Auth/>;
+	}
+
 	return (
 		<div className={common._wrapper}>
 			<Header />
-
 			<main id='detail'>
 				<Outlet />
 			</main>
-
 			<Footer />
 		</div>
 	);

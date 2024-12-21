@@ -5,6 +5,7 @@ import { addItemById, removeItemById } from '../../../../../store/cart';
 import Counter from '../../../common/Counter/Counter';
 import CustomImage from '../../../common/CustomImage/CustomImage';
 import styles from './CartItem.module.scss';
+import NotificationsService from '../../../../../services/NotificationsService';
 
 interface Props {
 	id: number;
@@ -18,9 +19,12 @@ const CartItem: FC<Props> = ({ id, name, imageUrl, totalPrice, count }) => {
 	const dispatch = useDispatch();
 	const onPlusClick = () => {
 		dispatch(addItemById(id));
+		NotificationsService.success("Added one more")
 	};
 	const onMinusClick = () => {
 		dispatch(removeItemById(id));
+		NotificationsService.success("Removed from cart")
+		
 	};
 	return (
 		<div className={styles.item}>

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useDispatch } from 'react-redux';
-import useCatalogOptionSelector from '../../../../../../hooks/useSelectors/useCatalogOptionSelector';
+import useCatalogOptionSelector from '../../../../../../hooks/useCatalogOptionSelector';
 import { setBladeWidth } from '../../../../../../store/catalog';
 import { debounceFunction } from '../../../../../../utils/CatalogUtills';
 import SliderAndResultView from '../../views/SliderAndResultView/SliderAndResultView';

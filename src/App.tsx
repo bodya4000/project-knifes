@@ -1,4 +1,4 @@
-import Main from './components/sceens/Layout';
+import Main from './components/screens/Layout';
 
 function App() {
 	return (
