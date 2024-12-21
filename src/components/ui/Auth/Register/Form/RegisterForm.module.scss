@@ -1,0 +1,12 @@
+@use '../../../../../styles/colors.scss' as *;
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: calc(15rem / 16);
+
+	span {
+		color: $yellow;
+		font-size: calc(10rem / 16);
+	}
+}

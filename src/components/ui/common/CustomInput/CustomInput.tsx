@@ -1,15 +1,17 @@
-import { FC } from 'react';
+import { ChangeEvent, forwardRef } from 'react';
 
 import styles from './CustomInput.module.scss';
 
 interface Props {
 	placeholder?: string;
 	value?: string;
-	onChange?: () => void;
+	onChange?: (value: ChangeEvent<HTMLInputElement>) => void;
 	styles?: string;
+	type?: React.HTMLInputTypeAttribute;
+	name?: string;
 }
 
-const CustomInput: FC<Props> = props => {
+const CustomInput = forwardRef<HTMLInputElement, Props>((props, ref) => {
 	return (
 		<div>
 			<input
@@ -17,10 +19,12 @@ const CustomInput: FC<Props> = props => {
 				value={props.value}
 				onChange={props.onChange}
 				placeholder={props.placeholder}
-				type={'text'}
+				type={props.type ? props.type : 'text'}
+				name={props.name}
+				ref={ref}
 			/>
 		</div>
 	);
-};
+});
 
 export default CustomInput;
