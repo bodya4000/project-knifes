@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 
-import useIsMobile from '../../../../hooks/isMobile';
+import useIsMobile from '../../../../hooks/useIsMobile';
 import common from '../../../../styles/common.module.scss';
 import IbgImage from '../../common/IbgImage/IbgImage';
 import styles from './ChoiceAdvice.module.scss';

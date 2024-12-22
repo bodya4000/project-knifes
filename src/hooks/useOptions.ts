@@ -6,7 +6,6 @@ import CatalogOptionsService from '../services/CatalogOptionsService';
 
 const useOptions = () => {
 	// const { optionLoaded } = useCatalogOptionSelector();
-	// const dispatch = useDispatch();
 	const { data, isSuccess, isLoading, error } = useQuery({
 		queryKey: ['options'],
 		queryFn: () => CatalogOptionsService.getOptions(),

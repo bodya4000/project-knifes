@@ -5,9 +5,7 @@ import CatalogOptions from '../../ui/ProductCatalog/CatalogOptions/CatalogOption
 import CatalogProductListView from '../../ui/ProductCatalog/ProductListView/ProductListView';
 import styles from './ProductsCatalog.module.scss';
 
-interface Props {}
-
-const ProductsCatalog: FC<Props> = ({}) => {
+const ProductsCatalog: FC = () => {
 	return (
 		<div className={styles.catalog}>
 			<div className={` ${styles.catalog__container}`}>
