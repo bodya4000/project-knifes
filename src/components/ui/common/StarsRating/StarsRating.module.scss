@@ -1,10 +1,14 @@
 @use '../../../../styles/colors.scss' as *;
 
 .starRating {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	position: relative;
 	display: inline-block;
 	color: #ccc;
+
+	@media (max-width: calc(840rem/16)) {
+		font-size: 1rem;
+	}
 }
 
 .starRatingOuter::before {

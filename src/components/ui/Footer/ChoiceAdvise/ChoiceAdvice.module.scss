@@ -4,7 +4,8 @@
 	position: relative;
 	z-index: 1000;
 	color: white;
-
+	min-height: 290px;
+	margin-bottom: 50px;
 	&__bg {
 		height: 100%;
 		width: 100%;

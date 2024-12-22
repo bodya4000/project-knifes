@@ -3,18 +3,16 @@ import { FC } from 'react';
 import common from '../../../../styles/common.module.scss';
 import BrightYellowButton from '../../common/BrightYellowButton/BrightYellowButton';
 import CustomImage from '../../common/CustomImage/CustomImage';
+import IbgImage from '../../common/IbgImage/IbgImage';
 import Feature from './Feature/Feature';
 import Line from './Line/Line';
 import styles from './Welcome.module.module.scss';
-import IbgImage from '../../common/IbgImage/IbgImage'
 
-interface Props {}
-
-const Welcome: FC<Props> = ({}) => {
+const Welcome: FC = () => {
 	return (
 		<section className={styles.welcome}>
 			<div className={styles.welcome__bg_image}>
-				<IbgImage src='src/assets/images/welcome_bg.png' />
+				<IbgImage src='assets/images/welcome_bg.png' />
 			</div>
 			<Line pimp={'80%'} left={'17%'} />
 			<Line left={'25%'} />
@@ -61,27 +59,27 @@ const Welcome: FC<Props> = ({}) => {
 					<div className={styles.welcome__image}>
 						<CustomImage
 							propsStyles={styles.welcome__knifes}
-							src='src/assets/images/knifes.svg'
+							src='assets/images/knifes.svg'
 							alt='knifes'
 						/>
 						<CustomImage
 							propsStyles={`${styles.welcome__ellipse}`}
-							src='src/assets/images/ellipse.svg'
+							src='assets/images/ellipse.svg'
 							alt='ellipse'
 						/>
 						<CustomImage
 							propsStyles={`${styles.welcome__pimp} ${styles.welcome__pimp_1}`}
-							src='src/assets/images/pimp_big.svg'
+							src='assets/images/pimp_big.svg'
 							alt='ellipse'
 						/>
 						<CustomImage
 							propsStyles={`${styles.welcome__pimp} ${styles.welcome__pimp_2}`}
-							src='src/assets/images/pimp_big.svg'
+							src='assets/images/pimp_big.svg'
 							alt='ellipse'
 						/>
 						<CustomImage
 							propsStyles={`${styles.welcome__pimp} ${styles.welcome__pimp_3}`}
-							src='src/assets/images/pimp_big.svg'
+							src='assets/images/pimp_big.svg'
 							alt='ellipse'
 						/>
 					</div>
@@ -89,27 +87,21 @@ const Welcome: FC<Props> = ({}) => {
 
 				<div className={styles.welcome__bottom_container}>
 					<Feature
-						imageSrc='src/assets/images/features/guarantee.svg'
+						imageSrc='assets/images/features/guarantee.svg'
 						alt='guarantee icon'
 					>
 						100% money-back guarantee
 					</Feature>
 					<Feature
-						imageSrc='src/assets/images/features/delivery.svg'
+						imageSrc='assets/images/features/delivery.svg'
 						alt='delivery icon'
 					>
 						Delivery across Ukraine, Poland, and Germany
 					</Feature>
-					<Feature
-						imageSrc='src/assets/images/features/apply.svg'
-						alt='apply icon'
-					>
+					<Feature imageSrc='assets/images/features/apply.svg' alt='apply icon'>
 						Ability to place an order without registration
 					</Feature>
-					<Feature
-						imageSrc='src/assets/images/features/sale.svg'
-						alt='sales icon'
-					>
+					<Feature imageSrc='assets/images/features/sale.svg' alt='sales icon'>
 						Discounts for regular customers
 					</Feature>
 				</div>

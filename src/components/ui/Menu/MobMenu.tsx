@@ -42,7 +42,7 @@ const MobMenu: FC<Props> = ({ propsStyles, nav }) => {
 
 				<li key={'menu'}>
 					<button className={styles.menu_mob__burger} onClick={onMenuCLick}>
-						<CustomImage src='src/assets/images/menu.svg' alt='menu' />
+						<CustomImage src='assets/images/menu.svg' alt='menu' />
 					</button>
 				</li>
 			</ul>

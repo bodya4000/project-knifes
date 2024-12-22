@@ -1,30 +1,17 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useState } from 'react';
 
+import useIsMobile from '../../../../hooks/isMobile';
 import common from '../../../../styles/common.module.scss';
 import IbgImage from '../../common/IbgImage/IbgImage';
 import styles from './ChoiceAdvice.module.scss';
 
-interface Props {}
-
-const ChoiceAdvice: FC<Props> = ({}) => {
+const ChoiceAdvice: FC = () => {
 	const [showMore, setShowmore] = useState<boolean>(false);
-	const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 767);
-
-	useEffect(() => {
-		const handleResize = () => {
-			setIsMobile(window.innerWidth <= 767);
-		};
-
-		window.addEventListener('resize', handleResize);
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
-	}, []);
-
+	const isMobile = useIsMobile();
 	return (
 		<div className={styles.advice}>
 			<div className={styles.advice__bg}>
-				<IbgImage src='src/assets/images/footer_bg.png' />
+				<IbgImage src='assets/images/footer_bg.png' />
 			</div>
 
 			<div className={`${common._container} ${styles.advice__container}`}>

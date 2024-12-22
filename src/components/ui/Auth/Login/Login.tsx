@@ -16,7 +16,7 @@ const Login: FC<LoginProps> = () => {
 			<div className={styles.login_body}>
 				<CustomImage
 					alt='Knives shop Logo'
-					src='src/assets/images/logo.svg'
+					src='assets/images/logo.svg'
 					propsStyles={styles.login_logo}
 				/>
 

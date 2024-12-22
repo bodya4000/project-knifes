@@ -23,7 +23,7 @@ const OptionTable: FC<Props> = ({ title, children }) => {
 								? styles.option__collapse_close
 								: styles.option__collapse_open
 						}
-						src='src\assets\images\collapse_yellow.svg'
+						src='assets\images\collapse_yellow.svg'
 						alt='collapse'
 					/>
 				</div>

@@ -12,52 +12,57 @@ import './index.css';
 import { AuthProvider } from './providers/AuthProvider';
 import { store } from './store/store';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+	[
+		{
+			path: '/',
+			element: <Layout />,
+			errorElement: (
+				<>
+					<Header />
+					<div>eror</div>
+				</>
+			),
+			children: [
+				{
+					path: '',
+					element: <Main />,
+				},
+				{
+					path: 'product',
+					element: <ProductDetail />,
+				},
+				{
+					path: 'products_catalog',
+					element: <ProductsCatalog />,
+				},
+				{
+					path: 'about',
+					element: <>hello</>,
+				},
+				{
+					path: 'contacts',
+					element: <>hello</>,
+				},
+				{
+					path: 'news',
+					element: <>hello</>,
+				},
+				{
+					path: 'payment_and_delivery',
+					element: <>hello</>,
+				},
+				{
+					path: 'login',
+					element: <>hello</>,
+				},
+			],
+		},
+	],
 	{
-		path: '/',
-		element: <Layout />,
-		errorElement: (
-			<>
-				<Header />
-				<div>eror</div>
-			</>
-		),
-		children: [
-			{
-				path: '/',
-				element: <Main />,
-			},
-			{
-				path: '/product',
-				element: <ProductDetail />,
-			},
-			{
-				path: '/products_catalog',
-				element: <ProductsCatalog />,
-			},
-			{
-				path: '/about',
-				element: <>hello</>,
-			},
-			{
-				path: '/contacts',
-				element: <>hello</>,
-			},
-			{
-				path: '/news',
-				element: <>hello</>,
-			},
-			{
-				path: '/payment_and_delivery',
-				element: <>hello</>,
-			},
-			{
-				path: '/login',
-				element: <>hello</>,
-			},
-		],
-	},
-]);
+		basename: '/project-knifes',
+	}
+);
 
 const queryClient = new QueryClient();
 

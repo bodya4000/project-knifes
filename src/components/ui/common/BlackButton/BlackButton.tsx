@@ -25,7 +25,7 @@ const BlackButton: FC<Props> = ({
 		return (
 			<Link
 				className={`${buttonClassName} ${disabled ? styles.disabled : ''}`}
-				to={to}
+				to={`project-knifes/${to}`}
 			>
 				{text}
 			</Link>

@@ -25,10 +25,7 @@ const PCHeader: FC<Props> = ({ propsStyles }) => {
 			/>
 			<CustomLink link='My account' propsStyles={styles.header_pc__profile}>
 				<div className={styles.header_pc__profile_img}>
-					<CustomImage
-						src='src/assets/images/my_account.svg'
-						alt='profile image'
-					/>
+					<CustomImage src='assets/images/my_account.svg' alt='profile image' />
 				</div>
 
 				<div className={styles.header_pc__profile_link}>My account</div>

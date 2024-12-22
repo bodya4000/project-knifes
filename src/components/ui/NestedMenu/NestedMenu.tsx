@@ -9,9 +9,7 @@ import PCMenu from '../Menu/PCMenu';
 import styles from './NestedMenu.module.scss';
 import NestedMenuItem from './NestedMenuItem/NestedMenuItem';
 
-interface Props {}
-
-const NestedMenu: FC<Props> = () => {
+const NestedMenu: FC = () => {
 	const [active, setActive] = useState<keyof PCBottomHeaderNav | null>(null);
 	const nav = pcBottomHeaderNav;
 

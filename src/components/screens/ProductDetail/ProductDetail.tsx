@@ -5,9 +5,8 @@ import useKnife from '../../../hooks/useKnife';
 import useOptions from '../../../hooks/useOptions';
 import ProductDetailView from '../../ui/ProductDetail/ProducDetailView/ProductDetailView';
 
-interface Props {}
 
-const ProductDetail: FC<Props> = ({}) => {
+const ProductDetail: FC = () => {
 	const [searchParams] = useSearchParams();
 	const id = searchParams.get('id');
 

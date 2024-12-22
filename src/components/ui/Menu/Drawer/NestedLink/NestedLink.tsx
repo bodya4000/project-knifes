@@ -32,7 +32,7 @@ const NestedLink: FC<Props> = ({ rootLink, sublinks }) => {
 						showSublinks && styles.nested_link__collapse_open
 					}`}
 					alt='collapse'
-					src='src/assets/images/collapse.svg'
+					src='assets/images/collapse.svg'
 				/>
 			</div>
 

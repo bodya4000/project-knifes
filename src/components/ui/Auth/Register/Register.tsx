@@ -2,8 +2,8 @@ import { FC, useContext } from 'react';
 import { AuthPageContext } from '../../../screens/Auth/Auth';
 import CustomImage from '../../common/CustomImage/CustomImage';
 import CustomLink from '../../common/CustomLink/CustomLink';
+import RegisterForm from './Form/RegisterForm';
 import styles from './Register.module.scss';
-import RegisterForm from './Form/RegisterForm'
 
 interface RegisterProps {
 	propName?: string;
@@ -16,7 +16,7 @@ const Register: FC<RegisterProps> = () => {
 			<div className={styles.login_body}>
 				<CustomImage
 					alt='Knives shop Logo'
-					src='src/assets/images/logo.svg'
+					src='assets/images/logo.svg'
 					propsStyles={styles.login_logo}
 				/>
 

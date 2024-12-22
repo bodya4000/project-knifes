@@ -8,9 +8,7 @@ import CustomImage from '../../../../common/CustomImage/CustomImage';
 import SliderAndResultView from '../../views/SliderAndResultView/SliderAndResultView';
 import styles from './PriceOption.module.scss';
 
-interface Props {}
-
-const PriceOption: FC<Props> = memo(({}) => {
+const PriceOption: FC = memo(() => {
 	const [opened, setOpened] = useState<boolean>(true);
 
 	const { price } = useCatalogOptionSelector();
@@ -39,7 +37,7 @@ const PriceOption: FC<Props> = memo(({}) => {
 									? styles.price_option__collapse_closed
 									: styles.price_option__collapse_opened
 							}`}
-							src='src/assets/images/collapse_yellow.svg'
+							src='assets/images/collapse_yellow.svg'
 							alt='link'
 						/>
 					</div>

@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ManufacturerOptionSelector: FC<Props> = ({ options }) => {
-	const onOptionClick = (option: string) => {};
+	const onOptionClick = () => {};
 	console.log(options);
 	return (
 		<div className={styles.option}>

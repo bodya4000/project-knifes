@@ -2,7 +2,6 @@
 
 .product {
 	padding-left: 1.5rem;
-
 	&:not(:last-child) {
 		padding-right: 1.5rem;
 	}
@@ -46,6 +45,7 @@
 		overflow: hidden;
 		position: relative;
 		width: 100%;
+
 		img {
 			width: 100%;
 			height: 100%;
@@ -64,7 +64,7 @@
 		}
 
 		@media (max-width: calc(660rem/16)) {
-			padding: 0 0 calc(150rem / 16) 0;
+			padding: 0 0 calc(100rem / 16) 0;
 		}
 	}
 
@@ -76,10 +76,17 @@
 		font-weight: 600;
 		line-height: 170%;
 
-		height: calc(60rem / 16);
+		height: calc(50rem / 16);
 
 		@media (max-width: calc(660rem/16)) {
+			font-size: calc(12rem/16);
+			height: calc(28rem / 16);
 			margin: calc(10rem / 16) 0 0 0;
+		}
+
+		@media (max-width: calc(480rem/16)) {
+			font-size: calc(10rem/16);
+			word-break: keep-all;
 		}
 	}
 
@@ -87,12 +94,16 @@
 		height: calc(150rem / 16);
 		display: flex;
 		flex-direction: column;
+
+		@media (max-width: calc(600rem/16)) {
+			height: calc(100rem / 16);
+		}
 	}
 
 	&__params {
 		flex-grow: 1;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 		color: #ababab;
 		font-family: Montserrat;
@@ -105,6 +116,11 @@
 		@media (max-width: calc(1700rem/16)) {
 			flex-direction: column;
 			align-items: flex-start;
+		}
+
+		@media (max-width: calc(600rem/16)) {
+			font-size: 0.7rem;
+			justify-content: center;
 		}
 	}
 
@@ -140,16 +156,9 @@
 			align-items: flex-start;
 			padding: 0;
 		}
-
-		@media (max-width: calc(660rem/16)) {
-			padding: 0 0 0.625rem 0;
-			margin: 0 0 0.625rem 0;
+		@media (max-width: calc(600rem/16)) {
+			margin-top: 10px;
 		}
-	}
-
-	&__stars {
-		font-size: 2rem;
-		color: $yellow;
 	}
 
 	&__feedback_amount {
@@ -161,6 +170,10 @@
 		line-height: 212%;
 		position: relative;
 		top: 3px;
+
+		@media (max-width: calc(660rem/16)) {
+			font-size: calc(12rem/16);
+		}
 	}
 
 	&__bottom {
@@ -177,11 +190,19 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: 170%;
+
+		@media (max-width: calc(600rem/16)) {
+			font-size: calc(14rem/16);
+		}
 	}
 
 	&__add_to_favorites {
 		color: $yellow;
-		font-size: 2rem;
+		font-size: 1.5rem;
+
+		@media (max-width: calc(600rem/16)) {
+			font-size: 1rem;
+		}
 	}
 	&__button {
 		flex: 0 1 auto;

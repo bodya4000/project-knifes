@@ -4,9 +4,8 @@ import common from '../../../../styles/common.module.scss';
 import styles from './KnifeCategories.module.scss';
 import KnifeCategoryItem from './KnifeCategoryItem';
 
-interface Props {}
 
-const KnifeCategories: FC<Props> = ({}) => {
+const KnifeCategories: FC = () => {
 	const data = [
 		{
 			title: 'Knifes Catalog',
@@ -51,7 +50,7 @@ const KnifeCategories: FC<Props> = ({}) => {
 							key={categoryItem.title}
 							title={categoryItem.title}
 							items={categoryItem.items}
-							img={`src/assets/images/knifes_categories/${categoryItem.img}`}
+							img={`assets/images/knifes_categories/${categoryItem.img}`}
 						/>
 					);
 				})}

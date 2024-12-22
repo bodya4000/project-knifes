@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { IOptions } from '../../../../../models/Catalog';
 import { IKnifeDetail } from '../../../../../models/Knife';
+import NotificationsService from '../../../../../services/NotificationsService';
 import { addToCart } from '../../../../../store/cart';
 import { parseDataInfoArrayWithKeysAndValue } from '../../../../../utils/ProductDetailUtills';
 import BlackButton from '../../../common/BlackButton/BlackButton';
@@ -12,8 +13,6 @@ import FavoritiesButton from '../../../common/FavoritesButton/FavoritiesButton';
 import StarsRating from '../../../common/StarsRating/StarsRating';
 import ProductInfo from './ProductInfo/ProductInfo';
 import styles from './ProductOrder.module.scss';
-import NotificationsService from '../../../../../services/NotificationsService';
-
 
 interface Props {
 	productData: IKnifeDetail;
@@ -36,7 +35,7 @@ const ProductOrder: FC<Props> = ({ productData }) => {
 			})
 		);
 		navigate(-1);
-		NotificationsService.success("Added to cart!")
+		NotificationsService.success('Added to cart!');
 	};
 
 	const productInfo = parseDataInfoArrayWithKeysAndValue(productData);

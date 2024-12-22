@@ -9,9 +9,7 @@ interface Props {
 }
 
 const SteelOptionSelector: FC<Props> = ({ options }) => {
-	const onOptionClick = (option: string) => {};
-	console.log(options);
-
+	const onOptionClick = () => {};
 	return (
 		<div
 			className={styles.option}
