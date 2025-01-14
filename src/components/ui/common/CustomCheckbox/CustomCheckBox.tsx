@@ -22,7 +22,7 @@ const CustomCheckbox: FC<CustomCheckboxProps> = ({
 	};
 
 	return (
-		<label className={propsStyles && propsStyles} style={styles.checkboxLabel}>
+		<div className={propsStyles && propsStyles} style={styles.checkboxLabel}>
 			<input
 				type='checkbox'
 				checked={isChecked}
@@ -33,7 +33,7 @@ const CustomCheckbox: FC<CustomCheckboxProps> = ({
 				{isChecked && '✓'}
 			</span>
 			<div>{label}</div>
-		</label>
+		</div>
 	);
 };
 

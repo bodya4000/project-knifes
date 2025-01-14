@@ -1,11 +1,13 @@
 import { FC } from 'react';
 
+import useScrollToTop from '../../../hooks/useScrollToTop';
 import CatalogHeader from '../../ui/ProductCatalog/CatalogHeader/CatalogHeader';
 import CatalogOptions from '../../ui/ProductCatalog/CatalogOptions/CatalogOptions';
 import CatalogProductListView from '../../ui/ProductCatalog/ProductListView/ProductListView';
 import styles from './ProductsCatalog.module.scss';
 
 const ProductsCatalog: FC = () => {
+	useScrollToTop();
 	return (
 		<div className={styles.catalog}>
 			<div className={` ${styles.catalog__container}`}>

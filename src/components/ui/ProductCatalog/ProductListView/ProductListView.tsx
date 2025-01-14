@@ -17,7 +17,6 @@ const ProductListView: FC<Props> = ({ propsStyles }) => {
 	// const data = useCatalogOptionSelector();
 	const { products } = useCartSelector();
 	console.log(JSON.stringify(products));
-
 	const { knifesData } = useKnifes();
 
 	if (knifesData)

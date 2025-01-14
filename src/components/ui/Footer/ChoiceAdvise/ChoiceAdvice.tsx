@@ -56,25 +56,25 @@ const ChoiceAdvice: FC = () => {
 					</p>
 
 					{!showMore && isMobile && (
-						<div
+						<button
 							onClick={() => {
 								setShowmore(true);
 							}}
 							className={styles.advice__text_show_more}
 						>
 							show more
-						</div>
+						</button>
 					)}
 
 					{showMore && isMobile && (
-						<div
+						<button
 							onClick={() => {
 								setShowmore(false);
 							}}
 							className={styles.advice__text_show_more}
 						>
 							show less
-						</div>
+						</button>
 					)}
 				</div>
 			</div>

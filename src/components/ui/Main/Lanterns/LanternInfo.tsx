@@ -16,7 +16,7 @@ const LanternInfo: FC<Props> = ({ src }) => {
 				<TitleBlock propsStyles={styles.lantern__title} title='Tactic Lanterns' />
 				<p className={styles.lantern__text}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 				<CustomImage propsStyles={styles.lantern__image} alt='lantern' src={src} />
-				<BrightYellowButton to='/' propsStyles={styles.lantern__button} onClick={() => {}} text='More' />
+				<BrightYellowButton to='/' propsStyles={styles.lantern__button} onClick={() => {}} text='See others' />
 			</section>
 		</article>
 	);

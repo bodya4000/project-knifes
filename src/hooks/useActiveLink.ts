@@ -17,6 +17,7 @@ const useActiveLink = (links: string[]) => {
 
 	useEffect(() => {
 		console.log('Current path:', location.pathname);
+		window.scrollTo(0, 0);
 		setActiveLinkFromPath(location.pathname.substring(1));
 	}, [location]);
 

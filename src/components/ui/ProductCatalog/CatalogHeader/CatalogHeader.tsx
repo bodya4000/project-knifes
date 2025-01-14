@@ -9,13 +9,10 @@ interface Props {
 
 const CatalogHeader: FC<Props> = ({ propsStyles }) => {
 	return (
-		<div
-			className={`${styles.catalog_header} ${propsStyles ? propsStyles : ''}`}
-		>
+		<section className={`${styles.catalog_header} ${propsStyles ? propsStyles : ''}`}>
 			<h1 className={styles.catalog_header__title}>Knifes</h1>
-
 			<SortOption />
-		</div>
+		</section>
 	);
 };
 
