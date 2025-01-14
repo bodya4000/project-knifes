@@ -12,18 +12,17 @@ interface Props {
 
 const BrightYellowButton: FC<Props> = ({ text, to, onClick, propsStyles }) => {
 	return (
-		<div
-			onClick={onClick ? onClick : () => {}}
-			className={`${propsStyles ? propsStyles : ''} ${styles.button}`}
-		>
+		<>
 			{to ? (
-				<Link className={styles.button} to={`project-knifes/${to}`}>
+				<Link onClick={onClick ? onClick : () => {}} className={`${propsStyles ? propsStyles : ''} ${styles.button}`} to={`project-knifes/${to}`}>
 					{text}
 				</Link>
 			) : (
-				<div className={styles.button}>{text}</div>
+				<button onClick={onClick ? onClick : () => {}} className={`${propsStyles ? propsStyles : ''} ${styles.button}`}>
+					{text}
+				</button>
 			)}
-		</div>
+		</>
 	);
 };
 

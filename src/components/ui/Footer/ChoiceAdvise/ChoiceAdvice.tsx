@@ -9,9 +9,9 @@ const ChoiceAdvice: FC = () => {
 	const [showMore, setShowmore] = useState<boolean>(false);
 	const isMobile = useIsMobile();
 	return (
-		<div className={styles.advice}>
+		<section className={styles.advice}>
 			<div className={styles.advice__bg}>
-				<IbgImage src='assets/images/footer_bg.png' />
+				<IbgImage lazy src='assets/images/footer_bg.webp' />
 			</div>
 
 			<div className={`${common._container} ${styles.advice__container}`}>
@@ -78,7 +78,7 @@ const ChoiceAdvice: FC = () => {
 					)}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

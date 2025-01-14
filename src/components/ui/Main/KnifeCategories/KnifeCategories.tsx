@@ -3,6 +3,7 @@ import { FC } from 'react';
 import common from '../../../../styles/common.module.scss';
 import styles from './KnifeCategories.module.scss';
 import KnifeCategoryItem from './KnifeCategoryItem';
+import HiddenTitle from '../../common/HiddenTitle/HiddenTitle'
 
 
 const KnifeCategories: FC = () => {
@@ -10,17 +11,17 @@ const KnifeCategories: FC = () => {
 		{
 			title: 'Knifes Catalog',
 			items: ['Cutting', 'Tourist', 'Hunt'],
-			img: 'knife_1.png',
+			img: 'knife_1.webp',
 		},
 		{
 			title: 'Camping Gear',
 			items: ['Tents', 'Sleeping Bags', 'Camping Stoves'],
-			img: 'knife_2.png',
+			img: 'knife_2.webp',
 		},
 		{
 			title: 'Fishing Equipment',
 			items: ['Fishing Rods', 'Lures', 'Nets'],
-			img: 'knife_3.png',
+			img: 'knife_3.webp',
 		},
 		{
 			title: 'Hiking Boots',
@@ -30,17 +31,18 @@ const KnifeCategories: FC = () => {
 		{
 			title: 'Survival Tools',
 			items: ['Fire Starters', 'Multi-tools', 'Water Filters'],
-			img: 'knife_5.png',
+			img: 'knife_5.webp',
 		},
 		{
 			title: 'Backpacks',
 			items: ['Daypacks', 'Hiking Backpacks', 'Travel Backpacks'],
-			img: 'knife_6.png',
+			img: 'knife_6.webp',
 		},
 	];
 
 	return (
 		<section className={styles.knife_categories}>
+			<HiddenTitle text='Knife Categories' />
 			<div
 				className={`${common._container} ${styles.knife_categories__container}`}
 			>

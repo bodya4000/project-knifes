@@ -12,7 +12,7 @@ const Welcome: FC = () => {
 	return (
 		<section className={styles.welcome}>
 			<div className={styles.welcome__bg_image}>
-				<IbgImage src='assets/images/welcome_bg.png' />
+				<IbgImage lazy src='assets/images/welcome_bg.webp' />
 			</div>
 			<Line pimp={'80%'} left={'17%'} />
 			<Line left={'25%'} />

@@ -11,25 +11,14 @@ interface Props {
 
 const LanternInfo: FC<Props> = ({ src }) => {
 	return (
-		<div className={styles.lantern}>
-			<div className={styles.lantern__container}>
-				<TitleBlock
-					propsStyles={styles.lantern__title}
-					title='Tactic Lanterns'
-				/>
-				<div className={styles.lantern__text}>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-				</div>
-				<CustomImage
-					propsStyles={styles.lantern__image}
-					alt='lantern'
-					src={src}
-				/>
-				<div className={styles.lantern__button}>
-					<BrightYellowButton onClick={() => {}} text='More' />
-				</div>
-			</div>
-		</div>
+		<article className={styles.lantern}>
+			<section className={styles.lantern__container}>
+				<TitleBlock propsStyles={styles.lantern__title} title='Tactic Lanterns' />
+				<p className={styles.lantern__text}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+				<CustomImage propsStyles={styles.lantern__image} alt='lantern' src={src} />
+				<BrightYellowButton to='/' propsStyles={styles.lantern__button} onClick={() => {}} text='More' />
+			</section>
+		</article>
 	);
 };
 

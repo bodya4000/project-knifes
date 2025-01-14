@@ -14,8 +14,8 @@ const ErrorPage: FC = () => {
 					top: '50%',
 				}}
 			>
-				Unexpected issue occurred, please be patient :) <br />
-				Be sure our specialists are fixing right now!
+				This page haven't been added yet :( <br />
+				Get back and be sure our specialists are fixing right now!
 				<div style={{ margin: '2rem auto', maxWidth: 300 }}>
 					<BlackButton to='..//' text='Click to go to main page' />
 				</div>

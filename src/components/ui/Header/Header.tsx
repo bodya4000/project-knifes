@@ -7,9 +7,8 @@ import styles from './Header.module.scss';
 import HeaderBottom from './HeaderBottom';
 import MobHeader from './MobHeader';
 
-interface Props {}
 
-const Header: FC<Props> = ({}) => {
+const Header: FC = () => {
 	return (
 		<>
 			<header className={styles.header}>

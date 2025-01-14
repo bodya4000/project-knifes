@@ -1,12 +1,12 @@
 .img {
 	display: flex;
-	flex: 0 0 auto;
 	justify-content: center;
 	align-items: center;
+	max-width: 100%;
 
-	img {
-		display: block;
-		max-width: 100%;
-		height: auto;
-	}
+	// img {
+	// 	display: block;
+	// 	max-width: 100%;
+	// 	height: auto;
+	// }
 }

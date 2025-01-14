@@ -14,12 +14,13 @@ const FooterColumn: FC<FooterColumnProps> = ({
 	propsStyle,
 	children,
 }) => (
-	<nav className={`${styles.footer__block_column} ${propsStyle && propsStyle}`}>
+	// TODO change div tag
+	<div className={`${styles.footer__block_column} ${propsStyle && propsStyle}`}>
 		<CustomLink link='/' noRedirect={true}>
 			{title}
 		</CustomLink>
 		{children}
-	</nav>
+	</div>
 );
 
 export default FooterColumn;

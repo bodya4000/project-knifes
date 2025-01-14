@@ -19,7 +19,6 @@ const HeaderBottom: FC = () => {
 
 				<div className={styles.header__bottom_search}>
 					<CustomImage alt='glass' src='assets/images/glass.svg' />
-
 					<CustomInput placeholder='Search' />
 				</div>
 

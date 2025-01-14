@@ -3,6 +3,7 @@
 .knife_category {
 	flex: 0 1 32%;
 	box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+	overflow: hidden;
 
 	@media (max-width: calc(1300rem/16)) {
 		flex: 0 1 47%;
@@ -28,8 +29,8 @@
 		gap: calc(30rem / 16);
 
 		@media (max-width: 49.99em) {
-			flex-direction: column;
 			align-items: center;
+			justify-content: center;
 			gap: calc(18rem / 16);
 		}
 	}
@@ -39,9 +40,14 @@
 		flex-direction: column;
 		gap: 0.625rem;
 		flex: 1 1 auto;
-
 		@media (max-width: 49.99em) {
 			gap: 0.3rem;
+			justify-content: center;
+			text-align: center;
+		}
+
+		@media (max-width: calc(480rem/16)) {
+			flex: 1 1 90%;
 		}
 
 		li {
@@ -68,17 +74,26 @@
 	}
 
 	&__img {
-		flex: 0 1 auto;
+		flex: 0 0 auto;
 		justify-content: right;
 		position: relative;
 		bottom: 1rem;
+		overflow: hidden;
+
+		@media (max-width: 49.99em) {
+			max-width: calc(190rem / 16);
+		}
+
+		@media (max-width: calc(480rem/16)) {
+			max-width: calc(120rem / 16);
+
+		}
 		img {
 			max-height: calc(200rem / 16);
 			margin: 0;
 			@media (max-width: 49.99em) {
-				max-height: calc(80rem / 16);
+				max-height: calc(90rem / 16);
 				position: relative;
-				top: 1rem;
 			}
 		}
 	}

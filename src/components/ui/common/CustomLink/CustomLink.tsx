@@ -12,14 +12,7 @@ interface Props {
 	noRedirect?: boolean;
 }
 
-const CustomLink: FC<Props> = ({
-	link,
-	children,
-	active,
-	onClick,
-	propsStyles,
-	noRedirect,
-}) => {
+const CustomLink: FC<Props> = ({ link, children, active, onClick, propsStyles, noRedirect }) => {
 	const to = normalizeLink(link);
 
 	const linkProps = {
@@ -30,15 +23,18 @@ const CustomLink: FC<Props> = ({
       ${propsStyles}
     `,
 		style: {
-			pointerEvents: active
-				? 'none'
-				: ('auto' as React.CSSProperties['pointerEvents']),
+			pointerEvents: active ? 'none' : ('auto' as React.CSSProperties['pointerEvents']),
 		} as React.CSSProperties,
 	};
 
-	return noRedirect ? (
-		<div {...linkProps}>{children}</div>
-	) : (
+	if (noRedirect && onClick) {
+		return <button {...linkProps}>{children}</button>;
+	}
+	if (noRedirect) {
+		return <h3 {...linkProps}>{children}</h3>;
+	}
+
+	return (
 		<Link {...linkProps} to={`${to}`}>
 			{children}
 		</Link>

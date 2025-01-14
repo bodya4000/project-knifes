@@ -32,7 +32,7 @@ const MobMenu: FC<Props> = ({ propsStyles, nav }) => {
 								link={link}
 							>
 								<CustomImage
-									src={`src/assets/images/${normalizeLink(link)}.svg`}
+									src={`assets/images/${normalizeLink(link)}.svg`}
 									alt={link}
 								/>
 							</CustomLink>

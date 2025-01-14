@@ -12,7 +12,7 @@ interface Props {
 
 const KnifeCategoryItem: FC<Props> = ({ title, items, img }) => {
 	return (
-		<div className={styles.knife_category}>
+		<section className={styles.knife_category}>
 			<div className={styles.knife_category__container}>
 				<div className={styles.knife_category__body}>
 					<TitleBlock title={title} />
@@ -22,16 +22,11 @@ const KnifeCategoryItem: FC<Props> = ({ title, items, img }) => {
 								return <li key={item}>{item}</li>;
 							})}
 						</ul>
-						<CustomImage
-							propsStyles={styles.knife_category__img}
-							alt=''
-							src={img}
-							// src='src\assets\images\knifes_categories\knife_1.png'
-						/>
+						<CustomImage propsStyles={styles.knife_category__img} alt={`image of ${title}`} src={img} />
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

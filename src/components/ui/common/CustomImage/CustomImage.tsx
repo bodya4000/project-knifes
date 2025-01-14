@@ -12,19 +12,7 @@ interface Props {
 }
 
 const CustomImage: FC<Props> = props => {
-	return (
-		<div
-			onClick={props.onClick}
-			className={`${styles.img} ${props.propsStyles ? props.propsStyles : ''}`}
-		>
-			<img
-				width={props.width}
-				height={props.height}
-				src={props.src}
-				alt={props.alt}
-			/>
-		</div>
-	);
+	return <img onClick={props.onClick} className={`${styles.img} ${props.propsStyles ? props.propsStyles : ''}`} width={props.width} height={props.height} src={props.src} alt={props.alt} />;
 };
 
 export default CustomImage;

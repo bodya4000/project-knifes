@@ -62,10 +62,7 @@ const Footer: FC = () => {
 				{/* Top Section */}
 				<section className={`${styles.footer__block} ${styles.footer__top}`}>
 					{isMobile ? (
-						<NestedLink
-							rootLink='ABOUT US'
-							sublinks={aboutUsLinks.map(link => link.text)}
-						/>
+						<NestedLink rootLink='ABOUT US' sublinks={aboutUsLinks.map(link => link.text)} />
 					) : (
 						<FooterColumn title='ABOUT US'>
 							{aboutUsLinks.map((link, index) => (
@@ -77,10 +74,7 @@ const Footer: FC = () => {
 					)}
 
 					{isMobile ? (
-						<NestedLink
-							rootLink='CUSTOMER SERVICE'
-							sublinks={customerServiceLinks.map(link => link.text)}
-						/>
+						<NestedLink rootLink='CUSTOMER SERVICE' sublinks={customerServiceLinks.map(link => link.text)} />
 					) : (
 						<FooterColumn title='CUSTOMER SERVICE'>
 							{customerServiceLinks.map((link, index) => (
@@ -92,10 +86,7 @@ const Footer: FC = () => {
 					)}
 
 					{isMobile ? (
-						<NestedLink
-							rootLink='SHOP'
-							sublinks={shopLinks.map(link => link.text)}
-						/>
+						<NestedLink rootLink='SHOP' sublinks={shopLinks.map(link => link.text)} />
 					) : (
 						<FooterColumn title='SHOP'>
 							{shopLinks.map((link, index) => (
@@ -107,10 +98,7 @@ const Footer: FC = () => {
 					)}
 
 					{isMobile ? (
-						<NestedLink
-							rootLink='CONNECT WITH US'
-							sublinks={connectWithUsLinks.map(link => link.text)}
-						/>
+						<NestedLink rootLink='CONNECT WITH US' sublinks={connectWithUsLinks.map(link => link.text)} />
 					) : (
 						<FooterColumn title='CONNECT WITH US'>
 							{connectWithUsLinks.map((link, index) => (
@@ -126,44 +114,28 @@ const Footer: FC = () => {
 				<section className={`${styles.footer__block} ${styles.footer__bottom}`}>
 					<FooterColumn title='CONTACTS'>
 						<CustomLink link='/'>
-							<CustomImage
-								src='assets/images/footer/phone.svg'
-								alt='phone'
-								propsStyles={`${styles.footer__bottom_icons}`}
-							/>
-							<div>+38 (099) 456-49-67</div>
+							<CustomImage src='assets/images/footer/phone.svg' alt='phone' propsStyles={`${styles.footer__bottom_icons}`} />
+							+38 (099) 456-49-67
 						</CustomLink>
+
 						<CustomLink link='/'>
-							<CustomImage
-								src='assets/images/footer/clock.svg'
-								alt='clock'
-								propsStyles={`${styles.footer__bottom_icons}`}
-							/>
-							<div>Mon-Fri 7:00 - 16:00 (UTC)</div>
+							<CustomImage src='assets/images/footer/clock.svg' alt='clock' propsStyles={`${styles.footer__bottom_icons}`} />
+							Mon-Fri 7:00 - 16:00 (UTC)
 						</CustomLink>
+
 						<CustomLink link='/'>
-							<CustomImage
-								src='assets/images/footer/pin.svg'
-								alt='location'
-								propsStyles={`${styles.footer__bottom_icons}`}
-							/>
-							<div>UA Knives, Naukova St, 1, Office “6B”</div>
+							<CustomImage src='assets/images/footer/pin.svg' alt='location' propsStyles={`${styles.footer__bottom_icons}`} />
+							UA Knives, Naukova St, 1, Office “6B”
 						</CustomLink>
+
 						<CustomLink link='/'>
-							<CustomImage
-								src='assets/images/footer/mail.svg'
-								alt='email'
-								propsStyles={`${styles.footer__bottom_icons}`}
-							/>
-							<div>info@zlatmax.ua</div>
+							<CustomImage src='assets/images/footer/mail.svg' alt='email' propsStyles={`${styles.footer__bottom_icons}`} />
+							info@zlatmax.ua
 						</CustomLink>
 					</FooterColumn>
 
 					{isMobile ? (
-						<NestedLink
-							rootLink='USEFUL LINKS'
-							sublinks={usefulLinks.map(link => link.text)}
-						/>
+						<NestedLink rootLink='USEFUL LINKS' sublinks={usefulLinks.map(link => link.text)} />
 					) : (
 						<FooterColumn title='USEFUL LINKS'>
 							{usefulLinks.map((link, index) => (
@@ -175,10 +147,7 @@ const Footer: FC = () => {
 					)}
 
 					{isMobile ? (
-						<NestedLink
-							rootLink='OUR GUARANTEE'
-							sublinks={ourGuarantee.map(link => link.text)}
-						/>
+						<NestedLink rootLink='OUR GUARANTEE' sublinks={ourGuarantee.map(link => link.text)} />
 					) : (
 						<FooterColumn title='OUR GUARANTEE'>
 							{ourGuarantee.map((link, index) => (
@@ -190,11 +159,7 @@ const Footer: FC = () => {
 					)}
 
 					<FooterColumn title='NEWSLETTER'>
-						<CustomLink
-							noRedirect={true}
-							link='/'
-							propsStyles={styles.footer__email_subscribe}
-						>
+						<CustomLink noRedirect={true} link='/' propsStyles={styles.footer__email_subscribe}>
 							Subscribe now!
 						</CustomLink>
 						<EmailSubscribeForm />
@@ -203,14 +168,11 @@ const Footer: FC = () => {
 
 				{/* Rights Section */}
 				<section className={styles.footer__rights}>
-					<div className={styles.footer__info}>
-						All materials presented on the site are for informational purposes
-						only and do not constitute a public offer as defined by Article 641
-						of the Civil Code of Ukraine. When copying materials, a hyperlink to
-						www.zlatmax.ua is mandatory!
-					</div>
+					<p className={styles.footer__info}>
+						All materials presented on the site are for informational purposes only and do not constitute a public offer as defined by Article 641 of the Civil Code of Ukraine. When copying materials, a hyperlink to www.zlatmax.ua is mandatory!
+					</p>
 
-					<div>Zlatoust Knives www.zlatmax.ua ©</div>
+					<p>Zlatoust Knives www.zlatmax.ua ©</p>
 				</section>
 			</div>
 		</footer>

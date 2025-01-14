@@ -18,18 +18,7 @@ interface Props {
 	activeLinkStyle?: string;
 }
 
-const PCMenu: FC<Props> = ({
-	nav,
-	propsStyles = '',
-	linkStyles = '',
-	listStyles = '',
-	children,
-	disablesLinks = false,
-	disablesClicks = false,
-	active,
-	setActive,
-	activeLinkStyle = '',
-}) => {
+const PCMenu: FC<Props> = ({ nav, propsStyles = '', linkStyles = '', listStyles = '', children, disablesLinks = false, disablesClicks = false, active, setActive, activeLinkStyle = '' }) => {
 	if (!nav || !Array.isArray(nav)) {
 		return <div style={{ color: 'red' }}>Loading...</div>;
 	}
@@ -43,18 +32,10 @@ const PCMenu: FC<Props> = ({
 							<li key={link}>
 								<CustomLink
 									noRedirect={disablesLinks && disablesLinks}
-									onClick={() =>
-										disablesClicks
-											? {}
-											: setActive(
-													normalizeLink(link) as keyof PCBottomHeaderNav
-											  )
-									}
+									onClick={() => (disablesClicks ? {} : setActive(normalizeLink(link) as keyof PCBottomHeaderNav))}
 									active={active === link}
 									link={link}
-									propsStyles={`${linkStyles} ${
-										active === normalizeLink(link) && activeLinkStyle
-									}`}
+									propsStyles={`${linkStyles} ${active === normalizeLink(link) && activeLinkStyle}`}
 								>
 									{link}
 								</CustomLink>

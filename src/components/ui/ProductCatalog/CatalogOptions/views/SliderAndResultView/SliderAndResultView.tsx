@@ -1,4 +1,3 @@
-import { DebouncedFunc } from 'lodash';
 import { FC, useEffect, useState } from 'react';
 import { CatalogInterval } from '../../../../../../models/Catalog';
 import CustomSlider from '../../../../common/CustomSlider/CustomSlider';
@@ -6,17 +5,11 @@ import styles from './SliderAndResultView.module.scss';
 
 interface Props {
 	data: CatalogInterval;
-	onDataChange: DebouncedFunc<
-		(_: number | undefined, __: number | undefined) => void
-	>;
+	onDataChange: (_: number | undefined, __: number | undefined) => void;
 	propsStyles?: string;
 }
 
-const SliderAndResultView: FC<Props> = ({
-	propsStyles,
-	data,
-	onDataChange,
-}) => {
+const SliderAndResultView: FC<Props> = ({ propsStyles, data, onDataChange }) => {
 	const [min, setMin] = useState(data.currentMin);
 	const [max, setMax] = useState(data.currentMax);
 
@@ -45,14 +38,7 @@ const SliderAndResultView: FC<Props> = ({
 			</div>
 
 			<div className={styles.slider}>
-				<CustomSlider
-					defaultMaxValue={max}
-					defaultMinValue={min}
-					max={data.max}
-					min={data.min}
-					setMaxFromParent={onChangeMax}
-					setMinFromParent={onChangeMin}
-				/>
+				<CustomSlider defaultMaxValue={max} defaultMinValue={min} max={data.max} min={data.min} setMaxFromParent={onChangeMax} setMinFromParent={onChangeMin} />
 			</div>
 		</div>
 	);
