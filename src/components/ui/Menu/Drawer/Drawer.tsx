@@ -25,7 +25,7 @@ const Drawer: FC<Props> = ({}) => {
 				<CustomImage
 					onClick={onCloseClick}
 					propsStyles={styles.drawer__close}
-					src='src/assets/images/close.svg'
+					src='assets/images/close.svg'
 					alt='close'
 				/>
 
@@ -38,7 +38,7 @@ const Drawer: FC<Props> = ({}) => {
 									<div>{renormalizeLink(key)}</div>
 									<CustomImage
 										alt='collapse'
-										src='src/assets/images/collapse.svg'
+										src='assets/images/collapse.svg'
 									/>
 								</CustomLink> */}
 							</li>

@@ -6,18 +6,18 @@ import styles from './BrightYellowButton.module.scss';
 interface Props {
 	text: string;
 	to?: string;
-	onClick: () => void;
+	onClick?: () => void;
 	propsStyles?: string;
 }
 
 const BrightYellowButton: FC<Props> = ({ text, to, onClick, propsStyles }) => {
 	return (
 		<div
-			onClick={onClick}
+			onClick={onClick ? onClick : () => {}}
 			className={`${propsStyles ? propsStyles : ''} ${styles.button}`}
 		>
 			{to ? (
-				<Link className={styles.button} to={to}>
+				<Link className={styles.button} to={`project-knifes/${to}`}>
 					{text}
 				</Link>
 			) : (

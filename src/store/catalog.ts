@@ -58,10 +58,8 @@ const catalogOptions = createSlice({
 	initialState,
 	reducers: {
 		setPrice(state, action: PayloadAction<CatalogInterval>) {
-			if (action.payload.currentMax)
-				state.price.currentMax = action.payload.currentMax;
-			if (action.payload.currentMin)
-				state.price.currentMin = action.payload.currentMin;
+			if (action.payload.currentMax) state.price.currentMax = action.payload.currentMax;
+			if (action.payload.currentMin) state.price.currentMin = action.payload.currentMin;
 			if (action.payload.max) state.price.max = action.payload.max;
 			if (action.payload.min) state.price.min = action.payload.min;
 		},
@@ -78,42 +76,30 @@ const catalogOptions = createSlice({
 			state.guard = action.payload;
 		},
 		setTotalLength(state, action: PayloadAction<CatalogInterval>) {
-			if (action.payload.currentMax)
-				state.totalLength.currentMax = action.payload.currentMax;
-			if (action.payload.currentMin)
-				state.totalLength.currentMin = action.payload.currentMin;
+			if (action.payload.currentMax) state.totalLength.currentMax = action.payload.currentMax;
+			if (action.payload.currentMin) state.totalLength.currentMin = action.payload.currentMin;
 			if (action.payload.max) state.totalLength.max = action.payload.max;
 			if (action.payload.min) state.totalLength.min = action.payload.min;
 		},
 		setBladeLength(state, action: PayloadAction<CatalogInterval>) {
-			if (action.payload.currentMax)
-				state.bladeLength.currentMax = action.payload.currentMax;
-			if (action.payload.currentMin)
-				state.bladeLength.currentMin = action.payload.currentMin;
+			if (action.payload.currentMax) state.bladeLength.currentMax = action.payload.currentMax;
+			if (action.payload.currentMin) state.bladeLength.currentMin = action.payload.currentMin;
 			if (action.payload.max) state.bladeLength.max = action.payload.max;
 			if (action.payload.min) state.bladeLength.min = action.payload.min;
 		},
 		setBladeWidth(state, action: PayloadAction<CatalogInterval>) {
-			if (action.payload.currentMax)
-				state.bladeWidth.currentMax = action.payload.currentMax;
-			if (action.payload.currentMin)
-				state.bladeWidth.currentMin = action.payload.currentMin;
+			if (action.payload.currentMax) state.bladeWidth.currentMax = action.payload.currentMax;
+			if (action.payload.currentMin) state.bladeWidth.currentMin = action.payload.currentMin;
 			if (action.payload.max) state.bladeWidth.max = action.payload.max;
 			if (action.payload.min) state.bladeWidth.min = action.payload.min;
 		},
 		setRating(state, action: PayloadAction<number>) {
 			state.rating = action.payload;
 		},
-		setSort(
-			state,
-			action: PayloadAction<{ backValue: string; frontValue: string }>
-		) {
+		setSort(state, action: PayloadAction<{ backValue: string; frontValue: string }>) {
 			state.sort = action.payload;
 		},
-		setAttributeByKeyAndValue(
-			state,
-			action: PayloadAction<{ key: string; value: string }>
-		) {
+		setAttributeByKeyAndValue(state, action: PayloadAction<{ key: string; value: string }>) {
 			switch (action.payload.key) {
 				case 'manufactures':
 					state.manufacturer = action.payload.value;
@@ -149,6 +135,9 @@ const catalogOptions = createSlice({
 		clearRating(state) {
 			state.rating = undefined;
 		},
+		loading(state, action: PayloadAction<boolean>) {
+			state.optionLoaded = action.payload;
+		},
 	},
 });
 
@@ -170,5 +159,7 @@ export const {
 	clearHandle,
 	clearGuard,
 	clearRating,
+
+	loading,
 } = catalogOptions.actions;
 export default catalogOptions.reducer;

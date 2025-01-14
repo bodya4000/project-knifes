@@ -2,10 +2,9 @@ import { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import useCatalogOptionSelector from '../../../../../../hooks/useCatalogOptionSelector';
 import { clearHandle, setHandle } from '../../../../../../store/catalog';
-import CheckBoxesView, {
-	CheckBoxItem,
-} from '../../views/CheckBoxesView/CheckBoxesView';
+import CheckBoxesView from '../../views/CheckBoxesView/CheckBoxesView';
 import OptionTable from '../OptionTable/OptionTable';
+import { CheckBoxItem } from '../../../../../../models/Catalog'
 
 interface Props {
 	handles: CheckBoxItem[] | undefined;

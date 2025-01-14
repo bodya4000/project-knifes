@@ -15,7 +15,7 @@ const EmailSubscribeForm: FC<Props> = ({}) => {
 					placeholder='example@gmail.com'
 				/>
 				<button className={styles.form__submit} type='submit'>
-					<img src='src/assets/images/collapse.svg' alt='submit' />
+					<img src='assets/images/collapse.svg' alt='submit' />
 				</button>
 			</div>
 

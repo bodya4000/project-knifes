@@ -7,7 +7,7 @@ interface Props {
 	link: string;
 	children: ReactNode;
 	active?: boolean;
-	onClick?: (link: string) => void;
+	onClick?: (_: string) => void;
 	propsStyles?: string;
 	noRedirect?: boolean;
 }
@@ -39,7 +39,7 @@ const CustomLink: FC<Props> = ({
 	return noRedirect ? (
 		<div {...linkProps}>{children}</div>
 	) : (
-		<Link {...linkProps} to={to}>
+		<Link {...linkProps} to={`${to}`}>
 			{children}
 		</Link>
 	);

@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react';
+import { FC, useContext, useState } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import useFormErrorNotifications from '../../../../../hooks/useFormErrorNotifications';
 import { AuthContext } from '../../../../../providers/AuthProvider';
@@ -26,6 +26,7 @@ const PASSWORD_MIN_LEN__ERROR = `Phone number must be at least ${PASSWORD_MIN_LE
 
 const LoginForm: FC = () => {
 	const { login } = useContext(AuthContext);
+	const [loading, setLoading] = useState(false);
 
 	const {
 		control,
@@ -38,6 +39,7 @@ const LoginForm: FC = () => {
 	});
 
 	const submitLogin: SubmitHandler<FormData> = async values => {
+		setLoading(true);
 		const { phoneNumber, password } = values;
 		try {
 			const { data } = await AuthService.login(phoneNumber, password);
@@ -51,6 +53,8 @@ const LoginForm: FC = () => {
 			}
 		} catch (_) {
 			NotificationsService.error(DEFAULT_ERROR);
+		} finally {
+			setLoading(false);
 		}
 	};
 
@@ -102,7 +106,7 @@ const LoginForm: FC = () => {
 				<span className={styles.error}>{errors.password.message}</span>
 			)}
 
-			<BlackButton submit text='Login' />
+			<BlackButton submit text='Login' loading={loading} />
 		</form>
 	);
 };

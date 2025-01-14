@@ -1,10 +1,9 @@
 import { FC } from 'react';
 
-import { ProductViewData } from '../../../../assets/types';
 // import BrightYellowButton from '../BrightYellowButton/BrightYellowButton';
+import { IKnife } from '../../../../models/Knife';
 import StarsRating from '../StarsRating/StarsRating';
 import styles from './ProductView.module.scss';
-import { IKnife } from '../../../../models/Knife'
 
 interface Props {
 	product: IKnife;

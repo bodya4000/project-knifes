@@ -26,7 +26,7 @@ const LanternInfo: FC<Props> = ({ src }) => {
 					src={src}
 				/>
 				<div className={styles.lantern__button}>
-					<BrightYellowButton text='More' />
+					<BrightYellowButton onClick={() => {}} text='More' />
 				</div>
 			</div>
 		</div>

@@ -4,9 +4,7 @@ import common from '../../../../styles/common.module.scss';
 import LanternInfo from './LanternInfo';
 import styles from './Lanterns.module.scss';
 
-interface Props {}
-
-const Lanterns: FC<Props> = ({}) => {
+const Lanterns: FC = () => {
 	return (
 		<section className={styles.lanterns}>
 			<div
@@ -14,8 +12,8 @@ const Lanterns: FC<Props> = ({}) => {
 				${common._container} 
 				${styles.lanterns__container}`}
 			>
-				<LanternInfo src='src\assets\images\lanterns\1.svg' />
-				<LanternInfo src='src\assets\images\lanterns\2.svg' />
+				<LanternInfo src='assets\images\lanterns\1.svg' />
+				<LanternInfo src='assets\images\lanterns\2.svg' />
 			</div>
 		</section>
 	);

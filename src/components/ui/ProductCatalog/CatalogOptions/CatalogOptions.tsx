@@ -1,6 +1,9 @@
 import { FC } from 'react';
+import { useDispatch } from 'react-redux';
 import useOptions from '../../../../hooks/useOptions';
 import useStoreOptions from '../../../../hooks/useStoreOptions';
+import { loading } from '../../../../store/catalog';
+import AI from '../../common/AI/AI';
 import styles from './CatalogOptions.module.scss';
 import BladeLengthOption from './options/BladeLengthOption/BladeLengthOption';
 import BladeWidthOption from './options/BladeWidthOption/BladeWidthOption';
@@ -18,27 +21,29 @@ interface Props {
 
 const CatalogOptions: FC<Props> = ({ propsStyles }) => {
 	const { data, isLoading, error } = useOptions();
+	const dispatch = useDispatch();
 	useStoreOptions(data);
 
 	if (isLoading) {
-		return <div>Loading...</div>;
+		return <AI color='black' />;
 	}
 
 	if (error) {
+		window.location.reload();
 		return (
 			<div>
-				Error:{' '}
-				{error?.message || 'There was an error fetching the options data.'}
+				<AI color='black' />
 			</div>
 		);
 	}
 
 	if (data) {
+		dispatch(loading(true));
 		return (
 			<div>
 				<div className={`${styles.options} ${propsStyles && propsStyles}`}>
 					<div className={styles.options__title}>
-						<h2>Фильтр товаров</h2>
+						<h2>Catalog Options</h2>
 					</div>
 					<PriceOption />
 					<ManufactorerOption manufacturers={data.manufactures} />

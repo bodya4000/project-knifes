@@ -1,9 +1,10 @@
 import { FC } from 'react';
 
 import { Link } from 'react-router-dom';
-import useKnifes from '../../../../hooks/useKnifes';
 import useCartSelector from '../../../../hooks/useCartSelector';
+import useKnifes from '../../../../hooks/useKnifes';
 import { IKnife } from '../../../../models/Knife';
+import AI from '../../common/AI/AI';
 import ProductView from '../../common/ProductView/ProductView';
 import styles from './ProductListView.module.scss';
 
@@ -30,7 +31,7 @@ const ProductListView: FC<Props> = ({ propsStyles }) => {
 							</Link>
 						))
 					) : (
-						<p>Loading products...</p>
+						<AI color='black' />
 					)}
 				</ul>
 			</div>

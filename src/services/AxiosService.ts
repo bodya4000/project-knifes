@@ -5,7 +5,9 @@ class AxiosService {
 
 	constructor() {
 		this.instance = axios.create({
-			baseURL: 'http://localhost:8081',
+			baseURL: 'https://project-knifes-back.onrender.com',
+			// baseURL: 'http://localhost:8081',
+			// baseURL: 'http://localhost:8081',
 			headers: {
 				'Content-Type': 'application/json',
 				Accept: 'application/json',

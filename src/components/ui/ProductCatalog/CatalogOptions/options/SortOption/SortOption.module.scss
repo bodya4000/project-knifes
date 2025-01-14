@@ -1,5 +1,6 @@
 .sort {
 	flex: 0 1 25%;
+	min-width: calc(150rem/16);
 	position: relative;
 	z-index: 1000;
 	&_option {

@@ -28,7 +28,7 @@ const Line: FC<Props> = ({ left, pimp }) => {
 						top: pimp,
 						zIndex: 0,
 					}}
-					src='src/assets/images/pimp.svg'
+					src='assets/images/pimp.svg'
 					alt='pimp'
 				/>
 			)}
