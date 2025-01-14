@@ -35,7 +35,7 @@ const router = createBrowserRouter(
 		},
 	],
 	{
-		basename: '/project-knifes',
+		basename: '/project-knifes/',
 	}
 );
 

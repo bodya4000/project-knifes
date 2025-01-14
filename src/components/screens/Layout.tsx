@@ -8,7 +8,6 @@ import { Auth } from './Auth/Auth';
 
 const Layout: FC = () => {
 	const { isAuthenticated } = useCheckAuth();
-
 	if (!isAuthenticated) {
 		return <Auth />;
 	}

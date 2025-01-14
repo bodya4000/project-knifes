@@ -13,6 +13,7 @@ import FavoritiesButton from '../../../common/FavoritesButton/FavoritiesButton';
 import StarsRating from '../../../common/StarsRating/StarsRating';
 import ProductInfo from './ProductInfo/ProductInfo';
 import styles from './ProductOrder.module.scss';
+import HiddenTitle from '../../../common/HiddenTitle/HiddenTitle'
 
 interface Props {
 	productData: IKnifeDetail;
@@ -40,7 +41,8 @@ const ProductOrder: FC<Props> = ({ productData }) => {
 
 	const productInfo = parseDataInfoArrayWithKeysAndValue(productData);
 	return (
-		<div className={styles.order}>
+		<section className={styles.order} key={productData.id}>
+			<HiddenTitle text='Product information'/>
 			<div className={styles.order__header}>
 				<div className={styles.order__top}>
 					<h2 className={styles.order__name}>{productData.name}</h2>
@@ -82,7 +84,7 @@ const ProductOrder: FC<Props> = ({ productData }) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

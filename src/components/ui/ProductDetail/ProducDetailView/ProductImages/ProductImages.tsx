@@ -9,35 +9,25 @@ interface Props {
 
 const ProductImages: FC<Props> = ({ imageUrl }) => {
 	return (
-		<div className={styles.product__images}>
-			<CustomImage
-				alt='Product Image'
-				src={imageUrl}
-				propsStyles={styles.product__images_main}
-			/>
-			<div className={styles.product__images_bottom}>
-				<CustomImage
-					alt='Product Image'
-					src={imageUrl}
-					propsStyles={styles.product__images_default}
-				/>{' '}
-				<CustomImage
-					alt='Product Image'
-					src={imageUrl}
-					propsStyles={styles.product__images_default}
-				/>{' '}
-				<CustomImage
-					alt='Product Image'
-					src={imageUrl}
-					propsStyles={styles.product__images_default}
-				/>{' '}
-				<CustomImage
-					alt='Product Image'
-					src={imageUrl}
-					propsStyles={styles.product__images_default}
-				/>
+		<section className={styles.product__images} key={imageUrl}>
+			<div className={styles.product__images_main}>
+				<CustomImage alt='Product Image' src={imageUrl} />
 			</div>
-		</div>
+			<div className={styles.product__images_bottom}>
+				<div className={styles.product__images_default}>
+					<CustomImage alt='Product Image' src={imageUrl} />{' '}
+				</div>{' '}
+				<div className={styles.product__images_default}>
+					<CustomImage alt='Product Image' src={imageUrl} />{' '}
+				</div>{' '}
+				<div className={styles.product__images_default}>
+					<CustomImage alt='Product Image' src={imageUrl} />{' '}
+				</div>{' '}
+				<div className={styles.product__images_default}>
+					<CustomImage alt='Product Image' src={imageUrl} />{' '}
+				</div>
+			</div>
+		</section>
 	);
 };
 

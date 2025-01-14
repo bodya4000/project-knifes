@@ -23,18 +23,18 @@ const ProductListView: FC<Props> = ({ propsStyles }) => {
 		return (
 			<div className={`${styles.wrapper} ${propsStyles ? propsStyles : ''}`}>
 				<ul className={styles.products}>
-					{knifesData?.knives?.length > 0 ? (
+					{knifesData?.knives?.length > 0 &&
 						knifesData?.knives?.map((product: IKnife) => (
 							<Link to={'/product?id=' + product.id} key={product.id}>
 								<ProductView product={product} />
 							</Link>
-						))
-					) : (
-						<AI color='black' />
-					)}
+						))}
 				</ul>
 			</div>
 		);
+	else {
+		return <AI color='black' size={80} />;
+	}
 };
 
 export default ProductListView;

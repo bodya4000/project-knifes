@@ -38,7 +38,6 @@ const useKnifes = () => {
 		refetch,
 	} = useQuery({
 		queryKey: ['knifes', body],
-
 		queryFn: () => knifesService.getKnives(body, { sort: data.sort.backValue }),
 		select: data => data.data,
 		enabled: false,

@@ -9,7 +9,6 @@
 		gap: calc(20rem/16);
 		& > * {
 			flex: 0 1 50%;
-			
 			&:not(:last-child) {
 				@media (max-width: calc(767px)) {
 					margin-bottom: calc(20rem/16);

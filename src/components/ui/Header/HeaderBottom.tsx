@@ -15,7 +15,7 @@ const HeaderBottom: FC = () => {
 	return (
 		<div className={styles.header__bottom}>
 			<div className={`${styles.header__bottom_body} ${common._container}`}>
-				<div className={styles.header__bottom_logo}>ZLATMAX</div>
+				<CustomLink link='../' propsStyles={styles.header__bottom_logo}>ZLATMAX</CustomLink>
 
 				<div className={styles.header__bottom_search}>
 					<CustomImage alt='glass' src='assets/images/glass.svg' />

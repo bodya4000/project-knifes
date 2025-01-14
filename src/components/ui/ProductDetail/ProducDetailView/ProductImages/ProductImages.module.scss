@@ -1,36 +1,33 @@
 .product__images {
 	display: flex;
 	flex-direction: column;
-
 	@media (max-width: 767px) {
 		height: calc(200rem / 16);
 	}
 
 	&_main {
 		flex: 0 0 70%;
+		overflow: hidden;
 		position: relative;
 		img {
-			position: absolute;
 			width: 100%;
-			height: 100%;
+			position: absolute;
+			text-align: center;
 			object-fit: cover;
 		}
 	}
 
 	&_bottom {
 		display: flex;
-		flex: 1 1 auto;
+		flex: 0 0 auto;
 	}
 
 	&_default {
 		flex: 0 0 25%;
-
 		position: relative;
 		img {
-			position: absolute;
-			height: 100%;
 			width: 100%;
-			object-fit: cover;
+			object-fit: contain;
 		}
 	}
 }

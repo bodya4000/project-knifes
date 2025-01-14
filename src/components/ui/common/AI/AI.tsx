@@ -3,15 +3,16 @@ import { ColorRing } from 'react-loader-spinner'
 
 interface AIProps {
 	color?: string;
+	size?:number | string
 }
 
-const AI: FC<AIProps> = ({ color = 'white' }) => {
+const AI: FC<AIProps> = ({ color = 'white', size }) => {
 	const colors: [string, string, string, string, string] = Array(5).fill(color) as [string, string, string, string, string];
 	return (
 		<ColorRing
 			visible={true}
-			height='40'
-			width='40'
+			height={size}
+			width={size}
 			ariaLabel='color-ring-loading'
 			wrapperStyle={{}}
 			wrapperClass='color-ring-wrapper'

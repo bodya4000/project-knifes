@@ -8,7 +8,7 @@ const useKnife = (id: number) => {
 		isError,
 		error,
 	} = useQuery({
-		queryKey: ['knifes'],
+		queryKey: ['knifes', id],
 		queryFn: () => knifesService.getKniveById(id),
 		select: data => data.data,
 	});
