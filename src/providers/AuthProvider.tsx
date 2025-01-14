@@ -17,15 +17,9 @@ interface ProviderProps {
 }
 
 export const AuthProvider: FC<ProviderProps> = ({ children }) => {
-	const [isAuthenticated, setIsAuthenticated] = useState(
-		Boolean(localStorage.getItem('accessToken'))
-	);
+	const [isAuthenticated, setIsAuthenticated] = useState(Boolean(localStorage.getItem('accessToken')));
 	const login = () => setIsAuthenticated(true);
 	const logout = () => setIsAuthenticated(false);
 
-	return (
-		<AuthContext.Provider value={{ isAuthenticated, login, logout }}>
-			{children}
-		</AuthContext.Provider>
-	);
+	return <AuthContext.Provider value={{ isAuthenticated, login, logout }}>{children}</AuthContext.Provider>;
 };

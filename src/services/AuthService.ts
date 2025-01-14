@@ -13,6 +13,12 @@ class AuthService {
 			password,
 		});
 	}
+
+	public async ping() {
+		const response = await AxiosService.post(`${this.BASE_URL}/ping`);
+		const {data} = response
+		return !!data.body.ping;
+	}
 }
 
 export default new AuthService();

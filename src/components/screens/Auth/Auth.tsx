@@ -14,7 +14,6 @@ export const AuthPageContext = createContext<AuthPageContextType>({
 
 export const Auth: FC = () => {
 	const [isLoginPage, setIsLoginPage] = useState(true);
-
 	const togglePage = () => setIsLoginPage(prevState => !prevState);
 
 	return (
