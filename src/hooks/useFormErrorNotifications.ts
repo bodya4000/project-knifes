@@ -2,9 +2,7 @@ import { useEffect } from 'react';
 import { FieldErrors, FieldValues } from 'react-hook-form';
 import NotificationsService from '../services/NotificationsService';
 
-const useFormErrorNotifications = <T extends FieldValues>(
-	errors: FieldErrors<T>
-): void => {
+const useFormErrorNotifications = <T extends FieldValues>(errors: FieldErrors<T>): void => {
 	useEffect(() => {
 		const firstErrorKey = Object.keys(errors).find(key => {
 			const error = errors[key as keyof T]?.message;

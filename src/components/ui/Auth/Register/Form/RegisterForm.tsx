@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react';
+import { FC, useContext, useState } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import useFormErrorNotifications from '../../../../../hooks/useFormErrorNotifications';
 import { AuthContext } from '../../../../../providers/AuthProvider';
@@ -35,6 +35,7 @@ const CONFIRM_PASSWORD__ERROR = 'Passwords do not match!';
 
 const RegisterForm: FC<RegisterFormProps> = () => {
 	const { login } = useContext(AuthContext);
+	const [loading, setLoading] = useState(false);
 
 	const {
 		control,
@@ -46,6 +47,7 @@ const RegisterForm: FC<RegisterFormProps> = () => {
 	});
 
 	const submitRegister: SubmitHandler<FormData> = async values => {
+		setLoading(true);
 		const { phoneNumber, password } = values;
 		try {
 			const { data } = await AuthService.register(phoneNumber, password);
@@ -59,6 +61,8 @@ const RegisterForm: FC<RegisterFormProps> = () => {
 			}
 		} catch (_) {
 			NotificationsService.error(DEFAULT_ERROR);
+		} finally {
+			setLoading(false);
 		}
 	};
 
@@ -143,9 +147,7 @@ const RegisterForm: FC<RegisterFormProps> = () => {
 				<span>{errors.confirmPassword.message || DEFAULT_ERROR}</span>
 			)}
 
-			<button type='submit'>
-				<BlackButton text='Register' />
-			</button>
+			<BlackButton submit text='Register' loading={loading} />
 		</form>
 	);
 };
