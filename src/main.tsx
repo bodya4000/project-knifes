@@ -1,35 +1,42 @@
+/* eslint-disable react-refresh/only-export-components */
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { lazy, ReactNode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import ErrorPage from './components/screens/ErrorPage/ErrorPage';
 import Layout from './components/screens/Layout';
-import Main from './components/screens/Main/Main';
-import ProductDetail from './components/screens/ProductDetail/ProductDetail';
-import ProductsCatalog from './components/screens/ProductsCatalog/ProductsCatalog';
-import './index.css';
+import AI from './components/ui/common/AI/AI';
 import { AuthProvider } from './providers/AuthProvider';
 import { store } from './store/store';
+
+const ErrorPage = lazy(() => import('./components/screens/ErrorPage/ErrorPage'));
+const ProductsCatalog = lazy(() => import('./components/screens/ProductsCatalog/ProductsCatalog'));
+const ProductDetail = lazy(() => import('./components/screens/ProductDetail/ProductDetail'));
+const Main = lazy(() => import('./components/screens/Main/Main'));
+
+const lazyComponent = (component: ReactNode) => {
+	return <Suspense fallback={<AI />}>{component}</Suspense>;
+};
 
 const router = createBrowserRouter(
 	[
 		{
 			path: '/',
 			element: <Layout />,
-			errorElement: <ErrorPage />,
+			errorElement: lazyComponent(<ErrorPage />),
 			children: [
 				{
 					path: '',
-					element: <Main />,
+					element: lazyComponent(<Main />),
 				},
 				{
 					path: 'product',
-					element: <ProductDetail />,
+					element: lazyComponent(<ProductDetail />),
 				},
 				{
 					path: 'products_catalog',
-					element: <ProductsCatalog />,
+					element: lazyComponent(<ProductsCatalog />),
 				},
 			],
 		},

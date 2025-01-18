@@ -1,13 +1,15 @@
-import { FC, useState } from 'react';
+import { FC, lazy, Suspense, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import useCartSelector from '../../../hooks/useCartSelector';
 import common from '../../../styles/common.module.scss';
+import AI from '../common/AI/AI';
 import CustomImage from '../common/CustomImage/CustomImage';
 import CustomInput from '../common/CustomInput/CustomInput';
 import CustomLink from '../common/CustomLink/CustomLink';
-import Cart from './Cart/Cart';
 import styles from './HeaderBottom.module.scss';
+
+const Cart = lazy(() => import('./Cart/Cart'));
 
 const HeaderBottom: FC = () => {
 	const [showCart, setShowCart] = useState(false);
@@ -43,7 +45,11 @@ const HeaderBottom: FC = () => {
 							<CustomImage width={32} height={32} onClick={() => setShowCart(!showCart)} src='assets/images/cart_black.svg' alt='cart' />
 							<div className={styles.details__cart_counter}>{totalCount}</div>
 
-							{showCart && <Cart />}
+							{showCart && (
+								<Suspense fallback={<AI />}>
+									<Cart />
+								</Suspense>
+							)}
 						</div>
 
 						<div className={styles.details__book_info}>

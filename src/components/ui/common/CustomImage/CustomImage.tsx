@@ -1,17 +1,31 @@
-import { FC } from 'react';
-
+import { FC, useEffect } from 'react';
 import styles from './CustomImage.module.scss';
 
 interface Props {
 	src: string;
 	alt: string;
-	propsStyles?: string;
+	width?: number | string;
+	height?: number | string;
+	notLazy?: boolean;
 	onClick?: () => void;
-	width?: number;
-	height?: number;
+	propsStyles?: string;
 }
 
 const CustomImage: FC<Props> = props => {
+	useEffect(() => {
+		if (props.notLazy) {
+			const link = document.createElement('link');
+			link.rel = 'preload';
+			link.as = 'image';
+			link.href = props.src;
+			document.head.appendChild(link);
+
+			return () => {
+				document.head.removeChild(link);
+			};
+		}
+	}, [props.notLazy, props.src]);
+
 	return (
 		<div
 			className={`${styles.imgContainer} ${props.propsStyles ? props.propsStyles : ''}`}
@@ -20,7 +34,7 @@ const CustomImage: FC<Props> = props => {
 				height: props.height,
 			}}
 		>
-			<img loading='lazy' onClick={props.onClick} className={styles.img} src={props.src} alt={props.alt} width={props.width} height={props.height} />
+			<img loading={props.notLazy ? 'eager' : 'lazy'} onClick={props.onClick} className={styles.img} src={props.src} alt={props.alt} width={props.width} height={props.height} />
 		</div>
 	);
 };

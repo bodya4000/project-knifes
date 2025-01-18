@@ -1,18 +1,14 @@
-import { FC, useState } from 'react';
-import {
-	PCBottomHeaderNav,
-	pcBottomHeaderNav,
-} from '../../../assets/data/navigations';
+import { FC, lazy, Suspense, useCallback, useState } from 'react';
+import { pcBottomHeaderNav as nav, PCBottomHeaderNav } from '../../../assets/data/navigations';
 import common from '../../../styles/common.module.scss';
 import { renormalizeLink } from '../../../utils/LinkUtills';
 import PCMenu from '../Menu/PCMenu';
 import styles from './NestedMenu.module.scss';
-import NestedMenuItem from './NestedMenuItem/NestedMenuItem';
+
+const NestedMenuBody = lazy(() => import('./NestedMenuBody/NestedMenuBody'));
 
 const NestedMenu: FC = () => {
 	const [active, setActive] = useState<keyof PCBottomHeaderNav | null>(null);
-	const nav = pcBottomHeaderNav;
-
 	const [nestedOpen, setNestedOpen] = useState<boolean>(false);
 
 	const changeActive = (link: keyof PCBottomHeaderNav | null) => {
@@ -25,20 +21,13 @@ const NestedMenu: FC = () => {
 		}
 	};
 
-	let selectedNavKey: Record<string, any> = {};
-	if (active !== null) {
-		selectedNavKey = pcBottomHeaderNav?.[active] || {};
-	}
-
-	const renormalizedLinks = (links: string[]): string[] => {
+	const renormalizedLinks = useCallback((links: string[]): string[] => {
 		return links.map(link => renormalizeLink(link));
-	};
+	}, []);
 
 	return (
 		<div className={styles['nested_menu']}>
-			<div
-				className={`${common._container} ${styles['nested_menu__container']}`}
-			>
+			<div className={`${common._container} ${styles['nested_menu__container']}`}>
 				<div className={styles['nested_menu__top']}>
 					<PCMenu
 						listStyles={styles['nested_menu__top_list']}
@@ -52,24 +41,16 @@ const NestedMenu: FC = () => {
 				</div>
 
 				{nestedOpen && (
-					<div className={styles['nested_menu__bottom']}>
-						<div className={`${common._container}`}>
-							<div className={styles['nested_menu__body']}>
-								<div className={styles['nested_menu__line']}></div>
-								{Object.entries(selectedNavKey).map(([key, value]) => (
-									<NestedMenuItem
-										navKey={key}
-										onLinkClick={() => {
-											changeActive(active);
-											setNestedOpen(false);
-										}}
-										navValue={value}
-										key={key}
-									/>
-								))}
-							</div>
-						</div>
-					</div>
+					<Suspense>
+						<NestedMenuBody
+							onLinkClick={() => {
+								changeActive(active);
+								setNestedOpen(false);
+							}}
+							active={active}
+							nav={nav}
+						/>
+					</Suspense>
 				)}
 			</div>
 		</div>

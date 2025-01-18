@@ -1,16 +1,16 @@
-export const debounceFunction = (
-  callback: (_: number | undefined, __: number | undefined) => void, 
-  delay: number = 500
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export const debounceFunction = <T extends (...args: any[]) => void>(
+	callback: T,
+	delay: number = 500
 ) => {
-  let timer: NodeJS.Timeout | null = null;
+	let timer: NodeJS.Timeout | null = null;
+	return (...args: Parameters<T>) => {
+		if (timer) {
+			clearTimeout(timer);
+		}
 
-  return (...args: [number | undefined, number | undefined]) => {
-    if (timer) {
-      clearTimeout(timer);
-    }
-
-    timer = setTimeout(() => {
-      callback(...args); 
-    }, delay);
-  };
+		timer = setTimeout(() => {
+			callback(...args);
+		}, delay);
+	};
 };
