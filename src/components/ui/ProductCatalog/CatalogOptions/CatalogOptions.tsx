@@ -31,16 +31,16 @@ const CatalogOptions: FC<Props> = ({ propsStyles }) => {
 	if (error) {
 		window.location.reload();
 		return (
-			<div>
+			<>
 				<AI color='black' />
-			</div>
+			</>
 		);
 	}
 
 	if (data) {
 		dispatch(loading(true));
 		return (
-			<div>
+			<>
 				<div className={`${styles.options} ${propsStyles && propsStyles}`}>
 					<div className={styles.options__title}>
 						<h2>Catalog Options</h2>
@@ -55,7 +55,7 @@ const CatalogOptions: FC<Props> = ({ propsStyles }) => {
 					<BladeWidthOption />
 					<RatingOption />
 				</div>
-			</div>
+			</>
 		);
 	}
 };

@@ -15,45 +15,32 @@ const HeaderBottom: FC = () => {
 	return (
 		<div className={styles.header__bottom}>
 			<div className={`${styles.header__bottom_body} ${common._container}`}>
-				<CustomLink link='../' propsStyles={styles.header__bottom_logo}>ZLATMAX</CustomLink>
+				<CustomLink link='../' propsStyles={styles.header__bottom_logo}>
+					ZLATMAX
+				</CustomLink>
 
 				<div className={styles.header__bottom_search}>
-					<CustomImage alt='glass' src='assets/images/glass.svg' />
+					<CustomImage height={12} width={12} alt='glass' src='assets/images/glass.svg' />
 					<CustomInput placeholder='Search' />
 				</div>
 
 				<div className={styles.header__bottom_details}>
 					<div className={styles.details__location}>
-						<CustomImage alt='pin' src='assets/images/location.svg' />
-
+						<CustomImage height={24} width={24} alt='pin' src='assets/images/location.svg' />
 						<div className={styles.details__location_city}>Lviv</div>
 					</div>
 					<CustomLink link='book' propsStyles={styles.details__phone}>
 						<div className={styles.details__phone_info}>
-							<div className={styles.details__phone_number}>
-								+38 (099) 762 2482
-							</div>
+							<div className={styles.details__phone_number}>+38 (099) 762 2482</div>
 
 							<div className={styles.details__phone_book}>Book now!</div>
 						</div>
-						<CustomImage
-							propsStyles={styles.details__phone_img}
-							src='assets/images/collapse_yellow.svg'
-							alt='link'
-						/>
+						<CustomImage width={16} height={10} propsStyles={styles.details__phone_img} src='assets/images/collapse_yellow.svg' alt='link' />
 					</CustomLink>
-					<CustomImage
-						propsStyles={styles.details__favorites}
-						src='assets/images/black_heart.svg'
-						alt='favorites'
-					/>
+					<CustomImage width={27} height={27} propsStyles={styles.details__favorites} src='assets/images/black_heart.svg' alt='favorites' />
 					<div className={styles.details__book}>
 						<div className={styles.details__cart}>
-							<CustomImage
-								onClick={() => setShowCart(!showCart)}
-								src='assets/images/cart_black.svg'
-								alt='cart'
-							/>
+							<CustomImage width={32} height={32} onClick={() => setShowCart(!showCart)} src='assets/images/cart_black.svg' alt='cart' />
 							<div className={styles.details__cart_counter}>{totalCount}</div>
 
 							{showCart && <Cart />}
@@ -61,10 +48,7 @@ const HeaderBottom: FC = () => {
 
 						<div className={styles.details__book_info}>
 							<div className={styles.details__book_total}>{totalPrice} $</div>
-							<Link
-								to={'project-knifes//purchase'}
-								className={styles.details__book_link}
-							>
+							<Link to={'project-knifes//purchase'} className={styles.details__book_link}>
 								Purchase
 							</Link>
 						</div>

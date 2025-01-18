@@ -3,9 +3,15 @@
 .advice {
 	position: relative;
 	z-index: 1000;
-	color: white;
-	min-height: 290px;
+	color: rgb(85, 80, 80);
+	min-height: 500px;
 	margin-bottom: 50px;
+	overflow: hidden;
+	background-color: rgb(11, 10, 10);
+
+	@media (max-width: 767px) {
+		min-height: 100px;
+	}
 	&__bg {
 		height: 100%;
 		width: 100%;
@@ -39,7 +45,13 @@
 
 	&__text {
 		color: silver;
+		overflow: hidden;
+		max-height: 500px;
+		transition: max-height 0.3s ease;
 
+		&_show_all {
+			max-height: 500px;
+		}
 		p {
 			&:not(:last-child) {
 				margin-bottom: 1.2rem;

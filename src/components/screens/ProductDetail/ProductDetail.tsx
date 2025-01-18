@@ -17,9 +17,6 @@ const ProductDetail: FC = () => {
 	const { data: optionsData } = useOptions();
 	const navigate = useNavigate();
 	useScrollToTop();
-
-	console.log(isLoading);
-	
 	if (isError) {
 		NotificationsService.error('failed to load product');
 		navigate(-1);

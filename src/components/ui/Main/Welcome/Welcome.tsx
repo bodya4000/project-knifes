@@ -51,15 +51,15 @@ const Welcome: FC = () => {
 					</div>
 
 					<div className={styles.welcome__image}>
-						<CustomImage propsStyles={styles.welcome__knifes} src='assets/images/knifes.svg' alt='knifes' />
-						<CustomImage propsStyles={`${styles.welcome__ellipse}`} src='assets/images/ellipse.svg' alt='ellipse' />
+						<CustomImage height={500} width={450} propsStyles={styles.welcome__knifes} src='assets/images/knifes.svg' alt='knifes' />
+						<CustomImage height={320} width={240} propsStyles={`${styles.welcome__ellipse}`} src='assets/images/ellipse.svg' alt='ellipse' />
 						<CustomImage propsStyles={`${styles.welcome__pimp} ${styles.welcome__pimp_1}`} src='assets/images/pimp_big.svg' alt='ellipse' />
 						<CustomImage propsStyles={`${styles.welcome__pimp} ${styles.welcome__pimp_2}`} src='assets/images/pimp_big.svg' alt='ellipse' />
 						<CustomImage propsStyles={`${styles.welcome__pimp} ${styles.welcome__pimp_3}`} src='assets/images/pimp_big.svg' alt='ellipse' />
 					</div>
 				</div>
 
-				<div className={styles.welcome__bottom_container}>
+				<article className={styles.welcome__bottom_container}>
 					<Feature imageSrc='assets/images/features/guarantee.svg' alt='guarantee icon'>
 						100% money-back guarantee
 					</Feature>
@@ -72,7 +72,7 @@ const Welcome: FC = () => {
 					<Feature imageSrc='assets/images/features/sale.svg' alt='sales icon'>
 						Discounts for regular customers
 					</Feature>
-				</div>
+				</article>
 			</div>
 		</section>
 	);

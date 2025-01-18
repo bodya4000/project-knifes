@@ -15,7 +15,7 @@ interface Props {
 
 const ProductDetailView: FC<Props> = ({ productData, optionsData }) => {
 	return (
-		<section className={styles.product}>
+		<section style={{ minHeight: '700px' }} className={styles.product}>
 			<HiddenTitle h1 text='Product detail view' />
 			<div className={`	${common._container} `}>
 				<div className={styles.product__details}>

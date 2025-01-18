@@ -9,15 +9,10 @@ interface Props {
 
 const Feature: FC<Props> = ({ imageSrc, alt, children }) => {
 	return (
-		<div className={styles.feature}>
-			<CustomImage
-				propsStyles={styles.feature__image}
-				src={imageSrc}
-				alt={alt}
-			/>
-
+		<article className={styles.feature}>
+			<CustomImage propsStyles={styles.feature__image} src={imageSrc} alt={alt} />
 			<div className={styles.feature__text}>{children}</div>
-		</div>
+		</article>
 	);
 };
 

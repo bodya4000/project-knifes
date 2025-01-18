@@ -6,12 +6,15 @@
 	}
 
 	&_main {
-		flex: 0 0 70%;
+		flex: 1 1 50%;
 		overflow: hidden;
 		position: relative;
+		background-color: silver;
 		img {
 			width: 100%;
+			height: transparent;
 			position: absolute;
+			top: 0;
 			text-align: center;
 			object-fit: cover;
 		}
@@ -25,6 +28,7 @@
 	&_default {
 		flex: 0 0 25%;
 		position: relative;
+		background-color: silver;
 		img {
 			width: 100%;
 			object-fit: contain;

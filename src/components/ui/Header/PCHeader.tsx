@@ -17,7 +17,7 @@ const PCHeader: FC<Props> = ({ propsStyles }) => {
 			<PCMenu active={active} setActive={setActive} nav={pcTopHeaderNav} propsStyles={styles.header_pc__menu} activeLinkStyle={styles.header_pc__active_link} />
 			<CustomLink link='My account' propsStyles={styles.header_pc__profile}>
 				<div className={styles.header_pc__profile_img}>
-					<CustomImage src='assets/images/my_account.svg' alt='profile image' />
+					<CustomImage height={25} width={25} src='assets/images/my_account.svg' alt='profile image' />
 				</div>
 
 				<div className={styles.header_pc__profile_link}>My account</div>

@@ -132,6 +132,8 @@
 	}
 
 	&__pimp {
+		height: 34px;
+		width: 30px;
 		position: absolute;
 		z-index: 50;
 		@media (max-width: 47.999em) {
@@ -156,6 +158,7 @@
 	&__bottom_container {
 		padding: calc(42rem / 16) 0 calc(62rem / 16) 0;
 		display: flex;
+		min-height: calc(120rem / 16);
 
 		@media (max-width: 47.999em) {
 			flex-direction: column;
