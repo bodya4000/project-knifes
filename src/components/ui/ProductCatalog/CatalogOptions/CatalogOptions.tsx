@@ -14,6 +14,7 @@ import PriceOption from './options/PriceOption/PriceOption';
 import RatingOption from './options/RatingOption/RatingOption';
 import SteelOption from './options/SteelOption/SteelOption';
 import TotalLengthOption from './options/TotalLengthOption/TotalLengthOption';
+import useIsMobile from '../../../../hooks/useIsMobile'
 
 interface Props {
 	propsStyles?: string;
@@ -23,8 +24,9 @@ const CatalogOptions: FC<Props> = ({ propsStyles }) => {
 	const { data, isLoading, error } = useOptions();
 	const dispatch = useDispatch();
 	useStoreOptions(data);
+	const isMobile = useIsMobile();
 
-	if (isLoading) {
+	if (isLoading && !isMobile) {
 		return <AI color='black' />;
 	}
 

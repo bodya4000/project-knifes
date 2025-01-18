@@ -111,8 +111,11 @@
 	}
 
 	&__knifes {
+		display: flex;
+		margin: 0 auto;
 		position: relative;
 		z-index: 30;
+
 		img {
 			@media (max-width: 47.999em) {
 				max-height: calc(290rem / 16);
@@ -166,4 +169,10 @@
 			padding: calc(18rem / 16) 0 calc(24rem / 16) 0;
 		}
 	}
+}
+
+.mob_catalog_btn {
+	margin: 40px auto 0 auto;
+	max-width: 300px;
+
 }

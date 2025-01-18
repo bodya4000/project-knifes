@@ -6,6 +6,7 @@ interface Props {
 	alt: string;
 	width?: number | string;
 	height?: number | string;
+	maxHeight?: number | string;
 	notLazy?: boolean;
 	onClick?: () => void;
 	propsStyles?: string;
@@ -32,6 +33,7 @@ const CustomImage: FC<Props> = props => {
 			style={{
 				width: props.width,
 				height: props.height,
+				maxHeight: props.maxHeight,
 			}}
 		>
 			<img loading={props.notLazy ? 'eager' : 'lazy'} onClick={props.onClick} className={styles.img} src={props.src} alt={props.alt} width={props.width} height={props.height} />

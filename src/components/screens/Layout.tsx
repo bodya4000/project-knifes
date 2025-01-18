@@ -19,7 +19,7 @@ const Layout: FC = () => {
 			if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight * 0.8) {
 				setShowFooter(true);
 			}
-		});
+		}, 100);
 		window.addEventListener('scroll', handleScroll);
 		return () => {
 			window.removeEventListener('scroll', handleScroll);

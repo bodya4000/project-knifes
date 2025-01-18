@@ -1,6 +1,6 @@
 .order {
 	padding: calc(30rem / 16);
-	padding-right: calc(50rem/16);
+	padding-right: calc(50rem / 16);
 	box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
 
 	@media (max-width: calc(767px)) {
@@ -45,7 +45,6 @@
 
 		@media (max-width: calc(650px)) {
 			justify-content: flex-start;
-
 		}
 	}
 
@@ -85,7 +84,7 @@
 	&__bottom {
 		padding: calc(30rem / 16) 0 0 0;
 		@media (max-width: calc(767px)) {
-			padding: 15px 10px;
+			padding: 15px 10px 0 10px;
 		}
 	}
 
@@ -102,7 +101,7 @@
 		padding: calc(30rem / 16) 0 0 0;
 		display: flex;
 		@media (max-width: calc(767px)) {
-			padding: 15px 10px;
+			padding: 15px 0 0 0;
 		}
 
 		@media (max-width: calc(1600px)) {
@@ -115,16 +114,21 @@
 			display: flex;
 			justify-content: flex-end;
 			gap: calc(20rem / 16);
-
 			@media (max-width: calc(1600px)) {
 				justify-content: flex-start;
 			}
-				@media (max-width: calc(650px)) {
-					flex-direction: column;
-					&>* {
-						max-height: 80px;
-					}
+			@media (max-width: calc(650px)) {
+				flex-direction: column;
+				& > * {
+					max-height: 80px;
 				}
+			}
+
+			button {
+				padding-top: 5px;
+				padding-bottom: 5px;
+				max-height: 3rem;
+			}
 		}
 	}
 }
