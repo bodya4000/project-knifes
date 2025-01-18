@@ -1,0 +1,1 @@
+import{r}from"./index-DMlv-Cjv.js";const s=()=>{r.useEffect(()=>{const o=history.scrollRestoration;return history.scrollRestoration="manual",window.scrollTo(0,0),()=>{history.scrollRestoration=o}},[])};export{s as u};

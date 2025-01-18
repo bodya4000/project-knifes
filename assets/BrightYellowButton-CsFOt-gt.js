@@ -1,0 +1,1 @@
+import{j as o,L as u}from"./index-DMlv-Cjv.js";const a="_button_7lbxf_1",r={button:a},b=({text:s,to:e,onClick:t,propsStyles:n})=>o.jsx(o.Fragment,{children:e?o.jsx(u,{onClick:t||(()=>{}),className:`${n||""} ${r.button}`,to:`project-knifes/${e}`,children:s}):o.jsx("button",{onClick:t||(()=>{}),className:`${n||""} ${r.button}`,children:s})});export{b as B};
