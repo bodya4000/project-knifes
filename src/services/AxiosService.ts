@@ -33,7 +33,7 @@ class AxiosService {
 				return response;
 			},
 			error => {
-				localStorage.removeItem('accessToken');
+				// localStorage.removeItem('accessToken');
 				// window.location.href = '/';
 				return Promise.reject(error);
 			}

@@ -21,7 +21,7 @@ export const AuthProvider: FC<ProviderProps> = ({ children }) => {
 		Boolean(localStorage.getItem('accessToken'))
 	);
 	const login = () => setIsAuthenticated(true);
-	const logout = () => setIsAuthenticated(false);
+	const logout = () => setIsAuthenticated(false); // !!!!
 
 	return (
 		<AuthContext.Provider value={{ isAuthenticated, login, logout }}>
