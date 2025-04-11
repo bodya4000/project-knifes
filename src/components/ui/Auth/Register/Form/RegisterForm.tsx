@@ -89,9 +89,7 @@ const RegisterForm: FC<RegisterFormProps> = () => {
 					/>
 				)}
 			/>
-			{errors.phoneNumber && (
-				<span>{errors.phoneNumber.message || DEFAULT_ERROR}</span>
-			)}
+			{errors.phoneNumber && <span>{errors.phoneNumber.message || DEFAULT_ERROR}</span>}
 
 			<Controller
 				name='email'
@@ -103,9 +101,7 @@ const RegisterForm: FC<RegisterFormProps> = () => {
 						message: EMAIL_PATTERN__ERROR,
 					},
 				}}
-				render={({ field }) => (
-					<AuthInput {...field} type='email' placeholder='Email' />
-				)}
+				render={({ field }) => <AuthInput {...field} type='email' placeholder='Email' />}
 			/>
 			{errors.email && <span>{errors.email.message || DEFAULT_ERROR}</span>}
 
@@ -119,33 +115,22 @@ const RegisterForm: FC<RegisterFormProps> = () => {
 						message: PASSWORD_MIN_LEN__ERROR,
 					},
 				}}
-				render={({ field }) => (
-					<AuthInput {...field} type='password' placeholder='Password' />
-				)}
+				render={({ field }) => <AuthInput {...field} type='password' placeholder='Password' />}
 			/>
-			{errors.password && (
-				<span>{errors.password.message || DEFAULT_ERROR}</span>
-			)}
+			{errors.password && <span>{errors.password.message || DEFAULT_ERROR}</span>}
 
 			<Controller
 				name='confirmPassword'
 				control={control}
 				rules={{
 					required: REQUIRED_FIELD_ERROR,
-					validate: value =>
-						value === watch('password') || CONFIRM_PASSWORD__ERROR,
+					validate: value => value === watch('password') || CONFIRM_PASSWORD__ERROR,
 				}}
 				render={({ field }) => (
-					<AuthInput
-						{...field}
-						type='password'
-						placeholder='Confirm Password'
-					/>
+					<AuthInput {...field} type='password' placeholder='Confirm Password' />
 				)}
 			/>
-			{errors.confirmPassword && (
-				<span>{errors.confirmPassword.message || DEFAULT_ERROR}</span>
-			)}
+			{errors.confirmPassword && <span>{errors.confirmPassword.message || DEFAULT_ERROR}</span>}
 
 			<BlackButton submit text='Register' loading={loading} />
 		</form>
