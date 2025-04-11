@@ -1,14 +1,11 @@
 import { FC } from 'react';
-import ChoiceAdvice from './ChoiceAdvise/ChoiceAdvice';
 
-import useIsMobile from '../../../hooks/useIsMobile';
+import useIsMobile from '@/hooks/useIsMobile';
+import { ChoiceAdvice, EmailSubscribeForm, FooterColumn } from '.';
+import { CustomImage, CustomLink } from '..';
 import common from '../../../styles/common.module.scss';
-import CustomImage from '../common/CustomImage/CustomImage';
-import CustomLink from '../common/CustomLink/CustomLink';
 import NestedLink from '../Menu/Drawer/NestedLink/NestedLink';
-import EmailSubscribeForm from './EmailSubscribeForm/EmailSubscribeForm';
 import styles from './Footer.module.scss';
-import FooterColumn from './FooterColumn';
 
 const Footer: FC = () => {
 	const isMobile = useIsMobile();
@@ -62,10 +59,7 @@ const Footer: FC = () => {
 				{/* Top Section */}
 				<section className={`${styles.footer__block} ${styles.footer__top}`}>
 					{isMobile ? (
-						<NestedLink
-							rootLink='ABOUT US'
-							sublinks={aboutUsLinks.map(link => link.text)}
-						/>
+						<NestedLink rootLink='ABOUT US' sublinks={aboutUsLinks.map(link => link.text)} />
 					) : (
 						<FooterColumn title='ABOUT US'>
 							{aboutUsLinks.map((link, index) => (
@@ -92,10 +86,7 @@ const Footer: FC = () => {
 					)}
 
 					{isMobile ? (
-						<NestedLink
-							rootLink='SHOP'
-							sublinks={shopLinks.map(link => link.text)}
-						/>
+						<NestedLink rootLink='SHOP' sublinks={shopLinks.map(link => link.text)} />
 					) : (
 						<FooterColumn title='SHOP'>
 							{shopLinks.map((link, index) => (
@@ -160,10 +151,7 @@ const Footer: FC = () => {
 					</FooterColumn>
 
 					{isMobile ? (
-						<NestedLink
-							rootLink='USEFUL LINKS'
-							sublinks={usefulLinks.map(link => link.text)}
-						/>
+						<NestedLink rootLink='USEFUL LINKS' sublinks={usefulLinks.map(link => link.text)} />
 					) : (
 						<FooterColumn title='USEFUL LINKS'>
 							{usefulLinks.map((link, index) => (
@@ -175,10 +163,7 @@ const Footer: FC = () => {
 					)}
 
 					{isMobile ? (
-						<NestedLink
-							rootLink='OUR GUARANTEE'
-							sublinks={ourGuarantee.map(link => link.text)}
-						/>
+						<NestedLink rootLink='OUR GUARANTEE' sublinks={ourGuarantee.map(link => link.text)} />
 					) : (
 						<FooterColumn title='OUR GUARANTEE'>
 							{ourGuarantee.map((link, index) => (
@@ -190,11 +175,7 @@ const Footer: FC = () => {
 					)}
 
 					<FooterColumn title='NEWSLETTER'>
-						<CustomLink
-							noRedirect={true}
-							link='/'
-							propsStyles={styles.footer__email_subscribe}
-						>
+						<CustomLink noRedirect={true} link='/' propsStyles={styles.footer__email_subscribe}>
 							Subscribe now!
 						</CustomLink>
 						<EmailSubscribeForm />
@@ -204,10 +185,9 @@ const Footer: FC = () => {
 				{/* Rights Section */}
 				<section className={styles.footer__rights}>
 					<div className={styles.footer__info}>
-						All materials presented on the site are for informational purposes
-						only and do not constitute a public offer as defined by Article 641
-						of the Civil Code of Ukraine. When copying materials, a hyperlink to
-						www.zlatmax.ua is mandatory!
+						All materials presented on the site are for informational purposes only and do not
+						constitute a public offer as defined by Article 641 of the Civil Code of Ukraine. When
+						copying materials, a hyperlink to www.zlatmax.ua is mandatory!
 					</div>
 
 					<div>Zlatoust Knives www.zlatmax.ua ©</div>
