@@ -1,43 +1,42 @@
-import { FC } from 'react';
+import { FC } from 'react'
 
-import common from '../../../../styles/common.module.scss';
-import styles from './KnifeCategories.module.scss';
-import KnifeCategoryItem from './KnifeCategoryItem';
-
+import { KnifeCategoryItem } from '.'
+import common from '../../../../styles/common.module.scss'
+import styles from './KnifeCategories.module.scss'
 
 const KnifeCategories: FC = () => {
 	const data = [
 		{
 			title: 'Knifes Catalog',
 			items: ['Cutting', 'Tourist', 'Hunt'],
-			img: 'knife_1.png',
+			img: 'knife_1.png'
 		},
 		{
 			title: 'Camping Gear',
 			items: ['Tents', 'Sleeping Bags', 'Camping Stoves'],
-			img: 'knife_2.png',
+			img: 'knife_2.png'
 		},
 		{
 			title: 'Fishing Equipment',
 			items: ['Fishing Rods', 'Lures', 'Nets'],
-			img: 'knife_3.png',
+			img: 'knife_3.png'
 		},
 		{
 			title: 'Hiking Boots',
 			items: ['Waterproof', 'Lightweight', 'Ankle Support'],
-			img: 'knife_4.svg',
+			img: 'knife_4.svg'
 		},
 		{
 			title: 'Survival Tools',
 			items: ['Fire Starters', 'Multi-tools', 'Water Filters'],
-			img: 'knife_5.png',
+			img: 'knife_5.png'
 		},
 		{
 			title: 'Backpacks',
 			items: ['Daypacks', 'Hiking Backpacks', 'Travel Backpacks'],
-			img: 'knife_6.png',
-		},
-	];
+			img: 'knife_6.png'
+		}
+	]
 
 	return (
 		<section className={styles.knife_categories}>
@@ -52,11 +51,11 @@ const KnifeCategories: FC = () => {
 							items={categoryItem.items}
 							img={`assets/images/knifes_categories/${categoryItem.img}`}
 						/>
-					);
+					)
 				})}
 			</div>
 		</section>
-	);
-};
+	)
+}
 
-export default KnifeCategories;
+export default KnifeCategories

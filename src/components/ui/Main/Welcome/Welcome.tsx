@@ -1,24 +1,36 @@
-import { FC } from 'react';
+import { FC } from 'react'
 
-import common from '../../../../styles/common.module.scss';
-import BrightYellowButton from '../../common/BrightYellowButton/BrightYellowButton';
-import CustomImage from '../../common/CustomImage/CustomImage';
-import IbgImage from '../../common/IbgImage/IbgImage';
-import Feature from './Feature/Feature';
-import Line from './Line/Line';
-import styles from './Welcome.module.module.scss';
+import {
+	BrightYellowButton,
+	CustomImage,
+	Feature,
+	IbgImage,
+	Line
+} from '@/components'
+
+import common from '../../../../styles/common.module.scss'
+import styles from './Welcome.module.module.scss'
 
 const Welcome: FC = () => {
 	return (
 		<section className={styles.welcome}>
 			<div className={styles.welcome__bg_image}>
-				<IbgImage src='assets/images/welcome_bg.png' />
+				<IbgImage src="assets/images/welcome_bg.png" />
 			</div>
-			<Line pimp={'80%'} left={'17%'} />
+			<Line
+				pimp={'80%'}
+				left={'17%'}
+			/>
 			<Line left={'25%'} />
-			<Line pimp={'10%'} left={'37%'} />
+			<Line
+				pimp={'10%'}
+				left={'37%'}
+			/>
 			<Line left={'45%'} />
-			<Line pimp={'60%'} left={'57%'} />
+			<Line
+				pimp={'60%'}
+				left={'57%'}
+			/>
 			<Line left={'65%'} />
 			<Line left={'77%'} />
 			<Line left={'85%'} />
@@ -52,62 +64,71 @@ const Welcome: FC = () => {
 						</div>
 
 						<div className={styles.welcome__more}>
-							<BrightYellowButton text='More' to='/' />
+							<BrightYellowButton
+								text="More"
+								to="/"
+							/>
 						</div>
 					</div>
 
 					<div className={styles.welcome__image}>
 						<CustomImage
 							propsStyles={styles.welcome__knifes}
-							src='assets/images/knifes.svg'
-							alt='knifes'
+							src="assets/images/knifes.svg"
+							alt="knifes"
 						/>
 						<CustomImage
 							propsStyles={`${styles.welcome__ellipse}`}
-							src='assets/images/ellipse.svg'
-							alt='ellipse'
+							src="assets/images/ellipse.svg"
+							alt="ellipse"
 						/>
 						<CustomImage
 							propsStyles={`${styles.welcome__pimp} ${styles.welcome__pimp_1}`}
-							src='assets/images/pimp_big.svg'
-							alt='ellipse'
+							src="assets/images/pimp_big.svg"
+							alt="ellipse"
 						/>
 						<CustomImage
 							propsStyles={`${styles.welcome__pimp} ${styles.welcome__pimp_2}`}
-							src='assets/images/pimp_big.svg'
-							alt='ellipse'
+							src="assets/images/pimp_big.svg"
+							alt="ellipse"
 						/>
 						<CustomImage
 							propsStyles={`${styles.welcome__pimp} ${styles.welcome__pimp_3}`}
-							src='assets/images/pimp_big.svg'
-							alt='ellipse'
+							src="assets/images/pimp_big.svg"
+							alt="ellipse"
 						/>
 					</div>
 				</div>
 
 				<div className={styles.welcome__bottom_container}>
 					<Feature
-						imageSrc='assets/images/features/guarantee.svg'
-						alt='guarantee icon'
+						imageSrc="assets/images/features/guarantee.svg"
+						alt="guarantee icon"
 					>
 						100% money-back guarantee
 					</Feature>
 					<Feature
-						imageSrc='assets/images/features/delivery.svg'
-						alt='delivery icon'
+						imageSrc="assets/images/features/delivery.svg"
+						alt="delivery icon"
 					>
 						Delivery across Ukraine, Poland, and Germany
 					</Feature>
-					<Feature imageSrc='assets/images/features/apply.svg' alt='apply icon'>
+					<Feature
+						imageSrc="assets/images/features/apply.svg"
+						alt="apply icon"
+					>
 						Ability to place an order without registration
 					</Feature>
-					<Feature imageSrc='assets/images/features/sale.svg' alt='sales icon'>
+					<Feature
+						imageSrc="assets/images/features/sale.svg"
+						alt="sales icon"
+					>
 						Discounts for regular customers
 					</Feature>
 				</div>
 			</div>
 		</section>
-	);
-};
+	)
+}
 
-export default Welcome;
+export default Welcome

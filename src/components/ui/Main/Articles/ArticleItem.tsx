@@ -1,8 +1,7 @@
 import { FC } from 'react';
 
-import CustomImage from '../../common/CustomImage/CustomImage';
-import CustomLink from '../../common/CustomLink/CustomLink';
 import styles from './ArticleItem.module.scss';
+import { CustomImage, CustomLink } from '@/components'
 
 interface Props {
 	src: string;

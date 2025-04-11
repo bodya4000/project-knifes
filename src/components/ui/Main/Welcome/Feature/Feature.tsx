@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
-import CustomImage from '../../../common/CustomImage/CustomImage';
 import styles from './Feature.module.scss';
+import { CustomImage } from '@/components'
 interface Props {
 	imageSrc: string;
 	alt: string;
