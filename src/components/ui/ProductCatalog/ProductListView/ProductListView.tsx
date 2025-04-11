@@ -31,7 +31,9 @@ const ProductListView: FC<Props> = ({ propsStyles }) => {
 							</Link>
 						))
 					) : (
-						<AI color='black' />
+						<div style={{ minHeight: 1000, background: 'red' }}>
+							<AI color='black' />
+						</div>
 					)}
 				</ul>
 			</div>

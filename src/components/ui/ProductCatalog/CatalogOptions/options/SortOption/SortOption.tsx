@@ -10,9 +10,8 @@ import CustomSelector from '../../../../common/CustomSelector/CustomSelector';
 
 import styles from './SortOption.module.scss';
 
-interface Props {}
 
-const SortOption: FC<Props> = () => {
+const SortOption: FC = () => {
 	const { sort } = useCatalogOptionSelector();
 	const { backValue, frontValue } = sort;
 	const dispatch = useDispatch();
@@ -23,7 +22,6 @@ const SortOption: FC<Props> = () => {
 		}
 	};
 
-	// Опції у форматі, який підходить для CustomSelector
 	const options = Object.values(SORT_OPTIONS).map(option => ({
 		name: SORT_OPTION_DETAILS[option].frontValue,
 		backValue: SORT_OPTION_DETAILS[option].backValue,

@@ -25,14 +25,18 @@ const CatalogOptions: FC<Props> = ({ propsStyles }) => {
 	useStoreOptions(data);
 
 	if (isLoading) {
-		return <AI color='black' />;
+		return (
+			<div style={{ minHeight: 1000 }}>
+				<AI color='black' />;
+			</div>
+		);
 	}
 
 	if (error) {
 		window.location.reload();
 		return (
-			<div>
-				<AI color='black' />
+			<div style={{ minHeight: 1000 }}>
+				<AI color='black' />;
 			</div>
 		);
 	}

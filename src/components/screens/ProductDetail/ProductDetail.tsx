@@ -5,7 +5,6 @@ import useKnife from '../../../hooks/useKnife';
 import useOptions from '../../../hooks/useOptions';
 import ProductDetailView from '../../ui/ProductDetail/ProducDetailView/ProductDetailView';
 
-
 const ProductDetail: FC = () => {
 	const [searchParams] = useSearchParams();
 	const id = searchParams.get('id');
@@ -20,7 +19,11 @@ const ProductDetail: FC = () => {
 	}
 
 	if (isLoading) {
-		return <h1>Loading...</h1>;
+		return (
+			<div style={{ minHeight: 1000 }}>
+				<h1>Loading...</h1>
+			</div>
+		);
 	}
 
 	return (
