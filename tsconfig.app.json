@@ -31,12 +31,13 @@
 			"@fonts/*": ["./src/assets/fonts/*"],
 			"@components/*": ["./src/components/*"],
 			"@constants/*": ["./src/constants/*"],
-			"@helpers*": ["./src/helpers/*"],
-			"@hooks*": ["./src/hooks/*"],
+			"@helpers/*": ["./src/helpers/*"],
+			"@hooks/*": ["./src/hooks/*"],
 			"@screens/*": ["./src/screens/*"],
 			"@providers/*": ["./src/providers/*"],
 			"@store/*": ["./src/store/*"],
-			"@utils/*": ["./src/utils/*"]
+			"@utils/*": ["./src/utils/*"],
+			"@styles/*": ["./src/styles/*"]
 		}
 	},
 	"include": ["src", "**/*.ts", "**/*.tsx"]

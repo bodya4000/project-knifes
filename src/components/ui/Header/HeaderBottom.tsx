@@ -1,35 +1,42 @@
-import { FC, useState } from 'react';
+import { FC, useState } from 'react'
+import { Link } from 'react-router-dom'
 
-import { Link } from 'react-router-dom';
-import useCartSelector from '../../../hooks/useCartSelector';
-import common from '../../../styles/common.module.scss';
-import CustomImage from '../common/CustomImage/CustomImage';
-import CustomInput from '../common/CustomInput/CustomInput';
-import CustomLink from '../common/CustomLink/CustomLink';
-import Cart from './Cart/Cart';
-import styles from './HeaderBottom.module.scss';
+import { Cart, CustomImage, CustomInput, CustomLink } from '@/components/ui'
+import useCartSelector from '@/hooks/useCartSelector'
+
+import common from '../../../styles/common.module.scss'
+import styles from './HeaderBottom.module.scss'
 
 const HeaderBottom: FC = () => {
-	const [showCart, setShowCart] = useState(false);
-	const { totalCount, totalPrice } = useCartSelector();
+	const [showCart, setShowCart] = useState(false)
+	const { totalCount, totalPrice } = useCartSelector()
 	return (
 		<div className={styles.header__bottom}>
 			<div className={`${styles.header__bottom_body} ${common._container}`}>
 				<div className={styles.header__bottom_logo}>ZLATMAX</div>
 
 				<div className={styles.header__bottom_search}>
-					<CustomImage alt='glass' src='assets/images/glass.svg' />
+					<CustomImage
+						alt="glass"
+						src="assets/images/glass.svg"
+					/>
 
-					<CustomInput placeholder='Search' />
+					<CustomInput placeholder="Search" />
 				</div>
 
 				<div className={styles.header__bottom_details}>
 					<div className={styles.details__location}>
-						<CustomImage alt='pin' src='assets/images/location.svg' />
+						<CustomImage
+							alt="pin"
+							src="assets/images/location.svg"
+						/>
 
 						<div className={styles.details__location_city}>Lviv</div>
 					</div>
-					<CustomLink link='book' propsStyles={styles.details__phone}>
+					<CustomLink
+						link="book"
+						propsStyles={styles.details__phone}
+					>
 						<div className={styles.details__phone_info}>
 							<div className={styles.details__phone_number}>
 								+38 (099) 762 2482
@@ -39,21 +46,21 @@ const HeaderBottom: FC = () => {
 						</div>
 						<CustomImage
 							propsStyles={styles.details__phone_img}
-							src='assets/images/collapse_yellow.svg'
-							alt='link'
+							src="assets/images/collapse_yellow.svg"
+							alt="link"
 						/>
 					</CustomLink>
 					<CustomImage
 						propsStyles={styles.details__favorites}
-						src='assets/images/black_heart.svg'
-						alt='favorites'
+						src="assets/images/black_heart.svg"
+						alt="favorites"
 					/>
 					<div className={styles.details__book}>
 						<div className={styles.details__cart}>
 							<CustomImage
 								onClick={() => setShowCart(!showCart)}
-								src='assets/images/cart_black.svg'
-								alt='cart'
+								src="assets/images/cart_black.svg"
+								alt="cart"
 							/>
 							<div className={styles.details__cart_counter}>{totalCount}</div>
 
@@ -73,7 +80,7 @@ const HeaderBottom: FC = () => {
 				</div>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default HeaderBottom;
+export default HeaderBottom
