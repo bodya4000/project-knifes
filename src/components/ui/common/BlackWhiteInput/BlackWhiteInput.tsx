@@ -1,8 +1,8 @@
 import { ChangeEvent, forwardRef } from 'react';
-import CustomInput from '../../common/CustomInput/CustomInput';
-import styles from './AuthInput.module.scss';
+import CustomInput from '../CustomInput/CustomInput';
+import styles from './BlackWhiteInput.module.scss';
 
-interface AuthInputProps {
+interface BlackWhiteInputProps {
 	type?: React.HTMLInputTypeAttribute;
 	placeholder: string;
 	value: string;
@@ -10,9 +10,10 @@ interface AuthInputProps {
 	name?: string;
 }
 
-const AuthInput = forwardRef<HTMLInputElement, AuthInputProps>(
+const BlackWhiteInput = forwardRef<HTMLInputElement, BlackWhiteInputProps>(
 	({ placeholder, value, onChange, type, name }, ref) => {
 		return (
+	
 			<CustomInput
 				type={type}
 				styles={styles.input}
@@ -26,5 +27,4 @@ const AuthInput = forwardRef<HTMLInputElement, AuthInputProps>(
 	}
 );
 
-
-export default AuthInput;
+export default BlackWhiteInput;

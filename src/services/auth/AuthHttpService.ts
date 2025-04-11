@@ -1,6 +1,6 @@
-import AxiosService from './AxiosService';
+import AxiosService from '../AxiosService';
 
-class AuthService {
+class AuthHttpService {
 	private BASE_URL = '/user/auth';
 
 	public login(phoneNumber: string, password: string) {
@@ -15,4 +15,4 @@ class AuthService {
 	}
 }
 
-export default new AuthService();
+export default new AuthHttpService();

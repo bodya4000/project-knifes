@@ -1,0 +1,12 @@
+@use '../../../../styles/colors.scss' as *;
+
+.input {
+	border: 2px solid $black;
+	border-radius: 2px;
+	padding: calc(10rem/16);
+	width: 100%;
+
+	&::placeholder {
+		color: $black;
+	}
+}

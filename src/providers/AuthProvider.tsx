@@ -1,4 +1,5 @@
-import { createContext, FC, ReactNode, useState } from 'react';
+import { AuthTokenService } from '@/services/auth';
+import { createContext, FC, ReactNode, useEffect, useState } from 'react';
 
 interface AuthContextType {
 	isAuthenticated: boolean;
@@ -17,9 +18,16 @@ interface ProviderProps {
 }
 
 export const AuthProvider: FC<ProviderProps> = ({ children }) => {
-	const [isAuthenticated, setIsAuthenticated] = useState(
-		Boolean(localStorage.getItem('accessToken'))
-	);
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+	useEffect(() => {
+		const checkAuth = async () => {
+			const token = await AuthTokenService.getToken();
+			setIsAuthenticated(!!token);
+		};
+
+		checkAuth();
+	}, []);
 	const login = () => setIsAuthenticated(true);
 	const logout = () => setIsAuthenticated(false); // !!!!
 

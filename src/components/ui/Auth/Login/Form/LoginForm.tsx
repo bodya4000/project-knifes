@@ -1,28 +1,14 @@
+import { AUTH_VALIDATION } from '@/assets/data';
+import { AuthFormFields } from '@/assets/types/Forms';
+import { ApplicationService } from '@/services';
 import { FC, useContext, useState } from 'react';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import useFormErrorNotifications from '../../../../../hooks/useFormErrorNotifications';
 import { AuthContext } from '../../../../../providers/AuthProvider';
-import AuthService from '../../../../../services/AuthService';
 import NotificationsService from '../../../../../services/NotificationsService';
-import { formatPhoneNumber } from '../../../../../utils/FormUttils';
 import BlackButton from '../../../common/BlackButton/BlackButton';
-import AuthInput from '../../AuthInput/AuthInput';
+import { LoginInput, PasswordInput } from '../../Inputs';
 import styles from './LoginForm.module.scss';
-
-interface FormData {
-	phoneNumber: string;
-	password: string;
-}
-
-// requirements
-const PHONE_NUMBER_MIN_LEN = 9;
-const PASSWORD_MIN_LEN = 8;
-
-// errors
-const DEFAULT_ERROR = 'Wrong phone number or password!';
-const REQUIRED_FIELD__ERROR = 'This field is required!';
-const PHONE_NUMBER_MIN_LEN__ERROR = `Phone number must be at least ${PHONE_NUMBER_MIN_LEN} characters`;
-const PASSWORD_MIN_LEN__ERROR = `Phone number must be at least ${PASSWORD_MIN_LEN} characters`;
 
 const LoginForm: FC = () => {
 	const { login } = useContext(AuthContext);
@@ -32,80 +18,26 @@ const LoginForm: FC = () => {
 		control,
 		handleSubmit,
 		formState: { errors },
-	} = useForm({
+	} = useForm<AuthFormFields>({
 		mode: 'onSubmit',
 		defaultValues: { phoneNumber: '', password: '' },
 		reValidateMode: 'onChange',
 	});
 
-	const submitLogin: SubmitHandler<FormData> = async values => {
+	const submitLogin: SubmitHandler<AuthFormFields> = async values => {
 		setLoading(true);
 		const { phoneNumber, password } = values;
-		try {
-			const { data } = await AuthService.login(phoneNumber, password);
-			const { status, message, body } = data;
-			if (status == 200 && body?.accessToken) {
-				login();
-				localStorage.setItem('accessToken', body.accessToken);
-				NotificationsService.success(message);
-			} else {
-				throw new Error(DEFAULT_ERROR);
-			}
-		} catch (_) {
-			NotificationsService.error(DEFAULT_ERROR);
-		} finally {
-			setLoading(false);
-		}
+		const authRes = await ApplicationService.login(phoneNumber, password, login);
+		if (!authRes) NotificationsService.error(AUTH_VALIDATION.errors.DEFAULT_ERROR);
+		setLoading(false);
 	};
 
 	useFormErrorNotifications(errors);
 
 	return (
 		<form className={styles.form} onSubmit={handleSubmit(submitLogin)}>
-			<Controller
-				name='phoneNumber'
-				control={control}
-				rules={{
-					required: REQUIRED_FIELD__ERROR,
-					minLength: {
-						value: PHONE_NUMBER_MIN_LEN,
-						message: PHONE_NUMBER_MIN_LEN__ERROR,
-					},
-				}}
-				render={({ field }) => (
-					<AuthInput
-						{...field}
-						type='tel'
-						placeholder='Phone number'
-						onChange={e => {
-							const formatted = formatPhoneNumber(e.target.value);
-							field.onChange(formatted);
-						}}
-					/>
-				)}
-			/>
-			{errors.phoneNumber && (
-				<span className={styles.error}>{errors.phoneNumber.message}</span>
-			)}
-
-			<Controller
-				name='password'
-				control={control}
-				rules={{
-					required: REQUIRED_FIELD__ERROR,
-					minLength: {
-						value: PASSWORD_MIN_LEN,
-						message: PASSWORD_MIN_LEN__ERROR,
-					},
-				}}
-				render={({ field }) => (
-					<AuthInput {...field} type='password' placeholder='Password' />
-				)}
-			/>
-			{errors.password && (
-				<span className={styles.error}>{errors.password.message}</span>
-			)}
-
+			<LoginInput control={control} error={errors.phoneNumber} />
+			<PasswordInput control={control} error={errors.password} />
 			<BlackButton submit text='Login' loading={loading} />
 		</form>
 	);
