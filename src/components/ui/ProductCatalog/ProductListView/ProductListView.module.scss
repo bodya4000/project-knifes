@@ -1,11 +1,15 @@
 .wrapper {
 	padding-left: calc(20rem / 16);
-
+	display: flex;
+	flex-direction: column;
+	gap: calc(40rem / 16);
 	@media (max-width: calc(1700rem/16)) {
 		padding-left: calc(10rem / 16);
+		gap: calc(30rem / 16);
 	}
 	@media (max-width: calc(767rem/16)) {
 		padding-left: 0;
+		gap: calc(20rem / 16);
 	}
 }
 
@@ -40,4 +44,10 @@
 			scale: 1.05;
 		}
 	}
+}
+
+.btn {
+	padding: calc(10rem / 16) calc(20rem / 16);
+	align-self: self-start;
+	width: auto;
 }

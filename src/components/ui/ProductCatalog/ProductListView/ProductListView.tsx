@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-import useCartSelector from '../../../../hooks/useCartSelector'
 import useKnifes from '../../../../hooks/useKnifes'
 import { IKnife } from '../../../../models/Knife'
+import { BlackButton } from '../../common'
 import AI from '../../common/AI/AI'
 import ProductView from '../../common/ProductView/ProductView'
 import styles from './ProductListView.module.scss'
@@ -13,34 +13,36 @@ interface Props {
 }
 
 const ProductListView: FC<Props> = ({ propsStyles }) => {
-	// const [loadedProducts, setLoadedProducts] = useState<ProductViewData[]>([]);
-	// const data = useCatalogOptionSelector();
-	const { products } = useCartSelector()
-	console.log(JSON.stringify(products))
+	const { knivesData, fetchNextPage, hasNextPage } = useKnifes()
+	console.log(knivesData)
 
-	const { knifesData } = useKnifes()
-
-	if (knifesData)
+	if (!knivesData || knivesData.knives.length == 0)
 		return (
-			<div className={`${styles.wrapper} ${propsStyles ? propsStyles : ''}`}>
-				<ul className={styles.products}>
-					{knifesData?.knives?.length > 0 ? (
-						knifesData?.knives?.map((product: IKnife) => (
-							<Link
-								to={'/product?id=' + product.id}
-								key={product.id}
-							>
-								<ProductView product={product} />
-							</Link>
-						))
-					) : (
-						<div style={{ minHeight: 1000, background: 'red' }}>
-							<AI color="black" />
-						</div>
-					)}
-				</ul>
+			<div style={{ minHeight: 1000 }}>
+				<AI color="black" />
 			</div>
 		)
+	return (
+		<div className={`${styles.wrapper} ${propsStyles ? propsStyles : ''}`}>
+			<ul className={styles.products}>
+				{knivesData.knives.map((product: IKnife) => (
+					<Link
+						to={'/product?id=' + product.id}
+						key={product.id}
+					>
+						<ProductView product={product} />
+					</Link>
+				))}
+			</ul>
+			{hasNextPage && (
+				<BlackButton
+					onClick={fetchNextPage}
+					propsStyles={styles.btn}
+					text="Load more knives!"
+				/>
+			)}
+		</div>
+	)
 }
 
 export default ProductListView
