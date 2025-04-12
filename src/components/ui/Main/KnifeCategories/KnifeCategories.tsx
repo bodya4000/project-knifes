@@ -1,10 +1,12 @@
 import { FC } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { KnifeCategoryItem } from '.'
 import common from '../../../../styles/common.module.scss'
 import styles from './KnifeCategories.module.scss'
 
 const KnifeCategories: FC = () => {
+	const navigate = useNavigate()
 	const data = [
 		{
 			title: 'Knifes Catalog',
@@ -41,6 +43,7 @@ const KnifeCategories: FC = () => {
 	return (
 		<section className={styles.knife_categories}>
 			<div
+				onClick={() => navigate('/products_catalog')}
 				className={`${common._container} ${styles.knife_categories__container}`}
 			>
 				{data.map(categoryItem => {

@@ -1,11 +1,11 @@
-import Main from './components/screens/Layout';
+import Layout from './components/screens/Layout'
 
 function App() {
 	return (
 		<>
-			<Main />
+			<Layout />
 		</>
-	);
+	)
 }
 
-export default App;
+export default App

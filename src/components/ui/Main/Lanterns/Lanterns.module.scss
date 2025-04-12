@@ -1,5 +1,13 @@
 .lanterns {
 	padding: 0 0 calc(120rem / 16) 0;
+
+	@media (max-width: calc(767rem/16)) {
+		padding: 0 0 calc(60rem / 16) 0;
+	}
+
+	@media (max-width: calc(480rem/16)) {
+		padding: 0 0 calc(30rem / 16) 0;
+	}
 	&__container {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
