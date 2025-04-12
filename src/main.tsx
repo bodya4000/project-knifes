@@ -5,7 +5,6 @@ import { ToastContainer } from 'react-toastify'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-import ErrorPage from './components/screens/ErrorPage/ErrorPage'
 import Layout from './components/screens/Layout'
 import Main from './components/screens/Main/Main'
 import ProductDetail from './components/screens/ProductDetail/ProductDetail'
@@ -19,7 +18,7 @@ const router = createBrowserRouter(
 		{
 			path: '/',
 			element: <Layout />,
-			errorElement: <ErrorPage />,
+			errorElement: <Layout error />,
 			children: [
 				{
 					path: '',
