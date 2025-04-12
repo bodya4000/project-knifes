@@ -1,21 +1,20 @@
-import { FC, useState } from 'react';
+import { FC, useState } from 'react'
 
-import { renormalizeLink } from '../../../../../utils/LinkUtills';
-import CustomImage from '../../../common/CustomImage/CustomImage';
-import CustomLink from '../../../common/CustomLink/CustomLink';
-import styles from './NestedLink.module.scss';
+import { renormalizeLink } from '../../../../utils/LinkUtills'
+import CustomImage from '../../common/CustomImage/CustomImage'
+import CustomLink from '../../common/CustomLink/CustomLink'
+import styles from './NestedLink.module.scss'
 
 interface Props {
-	rootLink: string;
-	sublinks: string[];
+	rootLink: string
+	sublinks: string[]
 }
 
 const NestedLink: FC<Props> = ({ rootLink, sublinks }) => {
-	const [showSublinks, setShowSublinks] = useState<boolean>(false);
-	console.log(showSublinks);
+	const [showSublinks, setShowSublinks] = useState<boolean>(false)
 
 	if (sublinks?.length === 0) {
-		return <CustomLink link={rootLink}>{renormalizeLink(rootLink)}</CustomLink>;
+		return <CustomLink link={rootLink}>{renormalizeLink(rootLink)}</CustomLink>
 	}
 
 	return (
@@ -31,8 +30,8 @@ const NestedLink: FC<Props> = ({ rootLink, sublinks }) => {
 					propsStyles={`${styles.nested_link__collapse} ${
 						showSublinks && styles.nested_link__collapse_open
 					}`}
-					alt='collapse'
-					src='assets/images/collapse.svg'
+					alt="collapse"
+					src="assets/images/collapse.svg"
 				/>
 			</div>
 
@@ -50,11 +49,11 @@ const NestedLink: FC<Props> = ({ rootLink, sublinks }) => {
 						>
 							{renormalizeLink(link)}
 						</CustomLink>
-					);
+					)
 				})}
 			</ul>
 		</div>
-	);
-};
+	)
+}
 
-export default NestedLink;
+export default NestedLink

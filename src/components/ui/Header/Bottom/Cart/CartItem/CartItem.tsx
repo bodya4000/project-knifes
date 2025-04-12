@@ -3,8 +3,8 @@ import { FC } from 'react';
 import { Counter, CustomImage } from '@/components/ui';
 import NotificationsService from '@/services/NotificationsService';
 import { useDispatch } from 'react-redux';
-import { addItemById, removeItemById } from '../../../../../store/cart';
 import styles from './CartItem.module.scss';
+import { addItemById, removeItemById } from '@/store/cart'
 
 interface Props {
 	id: number;

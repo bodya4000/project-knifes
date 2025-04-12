@@ -1,4 +1,5 @@
-export { default as ChoiceAdvice } from './ChoiceAdvise/ChoiceAdvice';
-export { default as EmailSubscribeForm } from './EmailSubscribeForm/EmailSubscribeForm';
-export { default as Footer } from './Footer';
-export { default as FooterColumn } from './FooterColumn';
+export { default as ChoiceAdvice } from './ChoiceAdvise/ChoiceAdvice'
+export { default as EmailSubscribeForm } from './EmailSubscribeForm/EmailSubscribeForm'
+export { default as Footer } from './Footer'
+export { default as FooterColumn } from './FooterColumn'
+export { FooterLinkBlock } from './FooterLinkBlock'

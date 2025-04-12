@@ -1,2 +1,5 @@
 export { default as ApplicationService } from './ApplicationService'
 export { AuthHttpService, AuthService, AuthTokenService } from './auth'
+export { default as CatalogOptionsService } from './CatalogOptionsService'
+export { default as KnivesService } from './KnifesService'
+export { default as NotificationsService } from './NotificationsService'

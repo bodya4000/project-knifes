@@ -1,38 +1,37 @@
-import { FC, useState } from 'react';
-import {
-	PCBottomHeaderNav,
-	pcBottomHeaderNav,
-} from '../../../assets/data/navigations';
-import common from '../../../styles/common.module.scss';
-import { renormalizeLink } from '../../../utils/LinkUtills';
-import PCMenu from '../Menu/PCMenu';
-import styles from './NestedMenu.module.scss';
-import NestedMenuItem from './NestedMenuItem/NestedMenuItem';
+import { FC, useState } from 'react'
 
-const NestedMenu: FC = () => {
-	const [active, setActive] = useState<keyof PCBottomHeaderNav | null>(null);
-	const nav = pcBottomHeaderNav;
+import { PCBottomHeaderNav, pcBottomHeaderNav } from '@/assets/data'
+import { renormalizeLink } from '@/utils'
 
-	const [nestedOpen, setNestedOpen] = useState<boolean>(false);
+import common from '../../../../styles/common.module.scss'
+import PCMenu from '../../Menu/PCMenu'
+import styles from './HeaderNestedMenu.module.scss'
+import NestedMenuItem from './HeaderNestedMenuItem/HeaderMenuItem'
+
+const HeaderNestedMenu: FC = () => {
+	const [active, setActive] = useState<keyof PCBottomHeaderNav | null>(null)
+	const nav = pcBottomHeaderNav
+
+	const [nestedOpen, setNestedOpen] = useState<boolean>(false)
 
 	const changeActive = (link: keyof PCBottomHeaderNav | null) => {
 		if (active === link) {
-			setActive(null);
-			setNestedOpen(false);
+			setActive(null)
+			setNestedOpen(false)
 		} else {
-			setActive(link);
-			setNestedOpen(true);
+			setActive(link)
+			setNestedOpen(true)
 		}
-	};
+	}
 
-	let selectedNavKey: Record<string, any> = {};
+	let selectedNavKey: Record<string, any> = {}
 	if (active !== null) {
-		selectedNavKey = pcBottomHeaderNav?.[active] || {};
+		selectedNavKey = pcBottomHeaderNav?.[active] || {}
 	}
 
 	const renormalizedLinks = (links: string[]): string[] => {
-		return links.map(link => renormalizeLink(link));
-	};
+		return links.map(link => renormalizeLink(link))
+	}
 
 	return (
 		<div className={styles['nested_menu']}>
@@ -60,8 +59,8 @@ const NestedMenu: FC = () => {
 									<NestedMenuItem
 										navKey={key}
 										onLinkClick={() => {
-											changeActive(active);
-											setNestedOpen(false);
+											changeActive(active)
+											setNestedOpen(false)
 										}}
 										navValue={value}
 										key={key}
@@ -73,7 +72,7 @@ const NestedMenu: FC = () => {
 				)}
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default NestedMenu;
+export default HeaderNestedMenu

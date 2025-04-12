@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import useCartSelector from '../../../../hooks/useCartSelector';
 
 import { BlackButton, CartItem } from '@/components/ui';
 
 import styles from './Cart.module.scss';
+import { useCartSelector } from '@/hooks'
 
 const Cart: FC = () => {
 	const { products, totalPrice } = useCartSelector();

@@ -1,9 +1,7 @@
 import { FC } from 'react'
 
-import { HeaderBottom, MobHeader, PCHeader } from '@components/ui'
+import { HeaderBottom, HeaderNestedMenu, HeaderTop } from '@/components'
 
-import common from '../../../styles/common.module.scss'
-import NestedMenu from '../NestedMenu/NestedMenu'
 import styles from './Header.module.scss'
 
 interface Props {}
@@ -12,14 +10,9 @@ const Header: FC<Props> = ({}) => {
 	return (
 		<>
 			<header className={styles.header}>
-				<div className={styles.header__top}>
-					<div className={`${common._container}`}>
-						<PCHeader propsStyles={styles.header_pc} />
-						<MobHeader propsStyles={styles.header_mob} />
-					</div>
-				</div>
+				<HeaderTop />
 				<HeaderBottom />
-				<NestedMenu />
+				<HeaderNestedMenu />
 			</header>
 		</>
 	)

@@ -1,19 +1,25 @@
 import { FC, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { Cart, CustomImage, CustomInput, CustomLink } from '@/components/ui'
 import useCartSelector from '@/hooks/useCartSelector'
 
-import common from '../../../styles/common.module.scss'
+import common from '../../../../styles/common.module.scss'
 import styles from './HeaderBottom.module.scss'
 
 const HeaderBottom: FC = () => {
 	const [showCart, setShowCart] = useState(false)
 	const { totalCount, totalPrice } = useCartSelector()
+	const navigate = useNavigate()
 	return (
 		<div className={styles.header__bottom}>
 			<div className={`${styles.header__bottom_body} ${common._container}`}>
-				<div className={styles.header__bottom_logo}>ZLATMAX</div>
+				<div
+					onClick={() => navigate('/')}
+					className={styles.header__bottom_logo}
+				>
+					ZLATMAX
+				</div>
 
 				<div className={styles.header__bottom_search}>
 					<CustomImage

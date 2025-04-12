@@ -1,36 +1,35 @@
-import { IKnife, IKnifeDetail, IKnifeOptionsRequest } from '../models/Knife';
-import AxiosService from './AxiosService';
+import { IKnife, IKnifeDetail, IKnifeOptionsRequest } from '../models/Knife'
+import AxiosService from './AxiosService'
 
-class KnifesService {
-	private URL = '/knives';
+class KnivesService {
+	private URL = '/knives'
 
 	private __parseQueryParamObjToString = (
 		params: Record<string, string | number | boolean>
 	): string => {
-		return (
-			'?' +
-			Object.keys(params)
-				.map(
-					key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
-				)
-				.join('&')
-		);
-	};
+		const searchParams = new URLSearchParams()
+		Object.entries(params).forEach(([key, value]) =>
+			searchParams.append(key, value.toString())
+		)
+		return '?' + searchParams.toString()
+	}
 
 	public async getKnives(
 		body: IKnifeOptionsRequest,
 		params: Record<string, string | number | boolean>
-	) {
-		const queryParamsString = this.__parseQueryParamObjToString(params);
-		return AxiosService.post<{ knives: IKnife[]; totalPages: number }>(
+	): Promise<{ knives: IKnife[]; totalPages: number }> {
+		const queryParamsString = this.__parseQueryParamObjToString(params)
+		const response = await AxiosService.post(
 			`${this.URL}${queryParamsString}`,
 			body
-		);
+		)
+		return response.data
 	}
 
-	public async getKniveById(id: number) {
-		return AxiosService.get<IKnifeDetail>(`${this.URL}/${id}`);
+	public async getKnifeById(id: number): Promise<IKnifeDetail> {
+		const response = await AxiosService.get(`${this.URL}/${id}`)
+		return response.data
 	}
 }
 
-export default new KnifesService();
+export default new KnivesService()

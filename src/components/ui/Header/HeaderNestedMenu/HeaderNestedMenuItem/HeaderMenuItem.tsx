@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import { useDispatch } from 'react-redux';
-import { setAttributeByKeyAndValue } from '../../../../store/catalog';
-import { renormalizeLink } from '../../../../utils/LinkUtills';
-import CustomLink from '../../common/CustomLink/CustomLink';
-import styles from './NestedMenuItem.module.scss';
+
+import styles from './HeaderMenuItem.module.scss';
+import { setAttributeByKeyAndValue } from '@/store/catalog'
+import { renormalizeLink } from '@/utils'
+import { CustomLink } from '@/components'
 
 interface Props {
 	onLinkClick: () => void;
@@ -11,7 +12,7 @@ interface Props {
 	navValue: string[];
 }
 
-const NestedMenuItem: FC<Props> = ({ navKey, navValue, onLinkClick }) => {
+const HeaderNestedMenuItem: FC<Props> = ({ navKey, navValue, onLinkClick }) => {
 	const dispatch = useDispatch();
 
 	const onClick = (link: string) => {
@@ -41,4 +42,4 @@ const NestedMenuItem: FC<Props> = ({ navKey, navValue, onLinkClick }) => {
 	);
 };
 
-export default NestedMenuItem;
+export default HeaderNestedMenuItem;
