@@ -1,6 +1,9 @@
 import { FC, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
+import { Cart } from '@/components'
+import { useCartSelector } from '@/hooks'
+
 import { changeMenuState } from '../../../store/menu'
 import { normalizeLink } from '../../../utils/LinkUtills'
 import CustomImage from '../common/CustomImage/CustomImage'
@@ -15,11 +18,12 @@ interface Props {
 
 const MobMenu: FC<Props> = ({ propsStyles, nav }) => {
 	const [active, setActive] = useState('/')
-
-	const dispatch = useDispatch()
+	const [showCart, setShowCart] = useState(false)
+	const { totalCount } = useCartSelector()
+	const dispacth = useDispatch()
 
 	const onMenuCLick = () => {
-		dispatch(changeMenuState())
+		dispacth(changeMenuState())
 	}
 	return (
 		<nav className={`${propsStyles} ${styles.menu_mob}`}>
@@ -27,16 +31,29 @@ const MobMenu: FC<Props> = ({ propsStyles, nav }) => {
 				{nav.map((link: string) => {
 					return (
 						<li key={link}>
-							<CustomLink
-								active={active === link}
-								onClick={() => setActive(link)}
-								link={link}
-							>
-								<CustomImage
-									src={`assets/images/${normalizeLink(link)}.svg`}
-									alt={link}
-								/>
-							</CustomLink>
+							{link != 'Cart' ? (
+								<CustomLink
+									active={active === link}
+									onClick={() => setActive(link)}
+									link={link}
+								>
+									<CustomImage
+										src={`src/assets/images/${normalizeLink(link)}.svg`}
+										alt={link}
+									/>
+								</CustomLink>
+							) : (
+								<div className={styles.cart}>
+									<CustomImage
+										onClick={() => setShowCart(!showCart)}
+										src={`src/assets/images/${normalizeLink(link)}.svg`}
+										alt={link}
+									/>
+									<div className={styles.counter}>{totalCount}</div>
+
+									{showCart && <Cart />}
+								</div>
+							)}
 						</li>
 					)
 				})}

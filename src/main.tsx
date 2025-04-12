@@ -48,7 +48,10 @@ createRoot(document.getElementById('root')!).render(
 			<QueryClientProvider client={queryClient}>
 				<AuthProvider>
 					<RouterProvider router={router} />
-					<ToastContainer position="top-center" />
+					<ToastContainer
+						style={{ zIndex: 10000 }}
+						position="top-center"
+					/>
 				</AuthProvider>
 			</QueryClientProvider>
 		</Provider>

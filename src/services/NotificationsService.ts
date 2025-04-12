@@ -1,4 +1,4 @@
-import { Bounce, toast } from 'react-toastify';
+import { Bounce, toast } from 'react-toastify'
 
 class NotificationsService {
 	public success(message: string) {
@@ -12,7 +12,8 @@ class NotificationsService {
 			progress: undefined,
 			theme: 'light',
 			transition: Bounce,
-		});
+			style: { zIndex: 10000, marginTop: 60 }
+		})
 	}
 
 	public error(message: string) {
@@ -26,8 +27,9 @@ class NotificationsService {
 			progress: undefined,
 			theme: 'light',
 			transition: Bounce,
-		});
+			style: { zIndex: 10000, marginTop: 60 }
+		})
 	}
 }
 
-export default new NotificationsService();
+export default new NotificationsService()
