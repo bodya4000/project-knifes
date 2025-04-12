@@ -1,24 +1,24 @@
-import { FC } from 'react';
+import { FC } from 'react'
+import { Link } from 'react-router-dom'
 
-import { Link } from 'react-router-dom';
-import useCartSelector from '../../../../hooks/useCartSelector';
-import useKnifes from '../../../../hooks/useKnifes';
-import { IKnife } from '../../../../models/Knife';
-import AI from '../../common/AI/AI';
-import ProductView from '../../common/ProductView/ProductView';
-import styles from './ProductListView.module.scss';
+import useCartSelector from '../../../../hooks/useCartSelector'
+import useKnifes from '../../../../hooks/useKnifes'
+import { IKnife } from '../../../../models/Knife'
+import AI from '../../common/AI/AI'
+import ProductView from '../../common/ProductView/ProductView'
+import styles from './ProductListView.module.scss'
 
 interface Props {
-	propsStyles?: string;
+	propsStyles?: string
 }
 
 const ProductListView: FC<Props> = ({ propsStyles }) => {
 	// const [loadedProducts, setLoadedProducts] = useState<ProductViewData[]>([]);
 	// const data = useCatalogOptionSelector();
-	const { products } = useCartSelector();
-	console.log(JSON.stringify(products));
+	const { products } = useCartSelector()
+	console.log(JSON.stringify(products))
 
-	const { knifesData } = useKnifes();
+	const { knifesData } = useKnifes()
 
 	if (knifesData)
 		return (
@@ -26,18 +26,21 @@ const ProductListView: FC<Props> = ({ propsStyles }) => {
 				<ul className={styles.products}>
 					{knifesData?.knives?.length > 0 ? (
 						knifesData?.knives?.map((product: IKnife) => (
-							<Link to={'/product?id=' + product.id} key={product.id}>
+							<Link
+								to={'/product?id=' + product.id}
+								key={product.id}
+							>
 								<ProductView product={product} />
 							</Link>
 						))
 					) : (
 						<div style={{ minHeight: 1000, background: 'red' }}>
-							<AI color='black' />
+							<AI color="black" />
 						</div>
 					)}
 				</ul>
 			</div>
-		);
-};
+		)
+}
 
-export default ProductListView;
+export default ProductListView

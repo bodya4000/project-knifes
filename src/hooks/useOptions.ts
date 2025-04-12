@@ -1,6 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query'
+
 // import { useDispatch } from 'react-redux';
-import CatalogOptionsService from '../services/CatalogOptionsService';
+import CatalogOptionsService from '../services/CatalogOptionsService'
+
 // import { setOptionsLoadedTrue } from '../store/catalogOptionsReducer';
 // import useCatalogOptionSelector from './useSelectors/useCatalogOptionSelector';
 
@@ -10,15 +12,14 @@ const useOptions = () => {
 		queryKey: ['options'],
 		queryFn: () => CatalogOptionsService.getOptions(),
 		select: data => data.data,
-		// staleTime: 10000
-		// enabled: !optionLoaded,
-	});
+		retry: 4
+	})
 
 	// if (data && isSuccess) {
 	// 	dispatch(setOptionsLoadedTrue());
 	// }
 
-	return { data, isSuccess, isLoading, error };
-};
+	return { data, isSuccess, isLoading, error }
+}
 
-export default useOptions;
+export default useOptions

@@ -1,48 +1,49 @@
-import { FC } from 'react';
-import { useDispatch } from 'react-redux';
-import useOptions from '../../../../hooks/useOptions';
-import useStoreOptions from '../../../../hooks/useStoreOptions';
-import { loading } from '../../../../store/catalog';
-import AI from '../../common/AI/AI';
-import styles from './CatalogOptions.module.scss';
-import BladeLengthOption from './options/BladeLengthOption/BladeLengthOption';
-import BladeWidthOption from './options/BladeWidthOption/BladeWidthOption';
-import GuardOption from './options/GuardOption/GuardOption';
-import HandleOption from './options/HandleOption/HandleOption';
-import ManufactorerOption from './options/ManufacturerOption/ManufacturerOption';
-import PriceOption from './options/PriceOption/PriceOption';
-import RatingOption from './options/RatingOption/RatingOption';
-import SteelOption from './options/SteelOption/SteelOption';
-import TotalLengthOption from './options/TotalLengthOption/TotalLengthOption';
+import { FC } from 'react'
+import { useDispatch } from 'react-redux'
+
+import useOptions from '../../../../hooks/useOptions'
+import useStoreOptions from '../../../../hooks/useStoreOptions'
+import { loading } from '../../../../store/catalog'
+import AI from '../../common/AI/AI'
+import styles from './CatalogOptions.module.scss'
+import BladeLengthOption from './options/BladeLengthOption/BladeLengthOption'
+import BladeWidthOption from './options/BladeWidthOption/BladeWidthOption'
+import GuardOption from './options/GuardOption/GuardOption'
+import HandleOption from './options/HandleOption/HandleOption'
+import ManufactorerOption from './options/ManufacturerOption/ManufacturerOption'
+import PriceOption from './options/PriceOption/PriceOption'
+import RatingOption from './options/RatingOption/RatingOption'
+import SteelOption from './options/SteelOption/SteelOption'
+import TotalLengthOption from './options/TotalLengthOption/TotalLengthOption'
 
 interface Props {
-	propsStyles?: string;
+	propsStyles?: string
 }
 
 const CatalogOptions: FC<Props> = ({ propsStyles }) => {
-	const { data, isLoading, error } = useOptions();
-	const dispatch = useDispatch();
-	useStoreOptions(data);
+	const { data, isLoading, error } = useOptions()
+	const dispatch = useDispatch()
+	useStoreOptions(data)
 
 	if (isLoading) {
 		return (
 			<div style={{ minHeight: 1000 }}>
-				<AI color='black' />;
+				<AI color="black" />
 			</div>
-		);
+		)
 	}
 
 	if (error) {
-		window.location.reload();
+		window.location.reload()
 		return (
 			<div style={{ minHeight: 1000 }}>
-				<AI color='black' />;
+				<AI color="black" />
 			</div>
-		);
+		)
 	}
 
 	if (data) {
-		dispatch(loading(true));
+		dispatch(loading(true))
 		return (
 			<div>
 				<div className={`${styles.options} ${propsStyles && propsStyles}`}>
@@ -60,8 +61,8 @@ const CatalogOptions: FC<Props> = ({ propsStyles }) => {
 					<RatingOption />
 				</div>
 			</div>
-		);
+		)
 	}
-};
+}
 
-export default CatalogOptions;
+export default CatalogOptions

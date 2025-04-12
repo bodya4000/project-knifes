@@ -1,9 +1,8 @@
 import { FC } from 'react'
 
-import common from '@styles/common.module.scss'
-
 import { HeaderBottom, MobHeader, PCHeader } from '@components/ui'
 
+import common from '../../../styles/common.module.scss'
 import NestedMenu from '../NestedMenu/NestedMenu'
 import styles from './Header.module.scss'
 
