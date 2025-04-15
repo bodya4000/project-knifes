@@ -8,6 +8,7 @@ class AxiosService {
 	constructor() {
 		this.instance = axios.create({
 			baseURL: 'https://project-knifes-back.onrender.com',
+			// baseURL: 'http://localhost:8081',
 			headers: {
 				'Content-Type': 'application/json',
 				Accept: 'application/json'
@@ -27,20 +28,25 @@ class AxiosService {
 				return config
 			},
 			error => {
-				console.error('Request Error:', error)
 				return Promise.reject(error)
 			}
 		)
-
 		this.instance.interceptors.response.use(
 			response => {
-				if (response.status === 401 || response.status === 403) {
+				return response
+			},
+			error => {
+				const token = AuthTokenService.getToken()
+				const isUnauthorized =
+					error?.response?.status === 401 || error?.response?.status === 403
+
+				if (isUnauthorized && token) {
 					AuthTokenService.clearToken()
 					location.reload()
 				}
-				return response
-			},
-			error => Promise.reject(error)
+
+				return Promise.reject(error)
+			}
 		)
 	}
 

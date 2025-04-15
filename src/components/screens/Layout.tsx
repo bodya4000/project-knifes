@@ -14,6 +14,9 @@ interface Props {
 
 const Layout: FC<Props> = ({ error }: Props) => {
 	const { isAuthenticated } = useAuth()
+
+	console.log(`isAuthenticated ${isAuthenticated}`)
+
 	if (!isAuthenticated) {
 		return <Auth />
 	}
