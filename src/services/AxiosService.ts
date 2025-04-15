@@ -22,9 +22,9 @@ class AxiosService {
 		this.instance.interceptors.request.use(
 			async config => {
 				const token = await AuthTokenService.getToken()
-				if (token) {
-					config.headers.Authorization = `Bearer ${token}`
-				}
+				console.log(token)
+
+				config.headers.Authorization = `Bearer ${token}`
 				return config
 			},
 			error => {
@@ -36,15 +36,9 @@ class AxiosService {
 				return response
 			},
 			error => {
-				const token = AuthTokenService.getToken()
-				const isUnauthorized =
-					error?.response?.status === 401 || error?.response?.status === 403
-
-				if (isUnauthorized && token) {
-					AuthTokenService.clearToken()
-					location.reload()
-				}
-
+				console.log('errorrr!!!')
+				AuthTokenService.clearToken()
+				location.href = '/project-knifes/'
 				return Promise.reject(error)
 			}
 		)
