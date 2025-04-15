@@ -38,15 +38,15 @@ const MobMenu: FC<Props> = ({ propsStyles, nav }) => {
 									link={link}
 								>
 									<CustomImage
-										src={`src/assets/images/${normalizeLink(link)}.svg`}
-										alt={link}
+										src={`assets/images/${normalizeLink(link)}.svg`}
+										alt={normalizeLink(link)}
 									/>
 								</CustomLink>
 							) : (
 								<div className={styles.cart}>
 									<CustomImage
 										onClick={() => setShowCart(!showCart)}
-										src={`src/assets/images/${normalizeLink(link)}.svg`}
+										src={`assets/images/${normalizeLink(link)}.svg`}
 										alt={link}
 									/>
 									<div className={styles.counter}>{totalCount}</div>

@@ -33,7 +33,13 @@ class AxiosService {
 		)
 
 		this.instance.interceptors.response.use(
-			response => response,
+			response => {
+				if (response.status === 401 || response.status === 403) {
+					AuthTokenService.clearToken()
+					location.reload()
+				}
+				return response
+			},
 			error => Promise.reject(error)
 		)
 	}
