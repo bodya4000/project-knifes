@@ -1,4 +1,6 @@
-import { FC, useState } from 'react'
+import { FC, useRef, useState } from 'react'
+
+import gsap from 'gsap'
 
 import { PCBottomHeaderNav, pcBottomHeaderNav } from '@/assets/data'
 import { renormalizeLink } from '@/utils'
@@ -12,15 +14,37 @@ const HeaderNestedMenu: FC = () => {
 	const [active, setActive] = useState<keyof PCBottomHeaderNav | null>(null)
 	const nav = pcBottomHeaderNav
 
-	const [nestedOpen, setNestedOpen] = useState<boolean>(false)
+	const nestedRef = useRef<HTMLDivElement>(null)
 
 	const changeActive = (link: keyof PCBottomHeaderNav | null) => {
 		if (active === link) {
-			setActive(null)
-			setNestedOpen(false)
+			closeNested()
 		} else {
 			setActive(link)
-			setNestedOpen(true)
+			showNested()
+		}
+	}
+
+	const closeNested = () => {
+		if (nestedRef.current) {
+			gsap.to(nestedRef.current, {
+				height: 0,
+				duration: 1,
+				ease: 'power2.inOut',
+				onComplete: () => {
+					setActive(null)
+				}
+			})
+		}
+	}
+
+	const showNested = () => {
+		if (nestedRef.current) {
+			gsap.to(nestedRef.current, {
+				height: 'auto',
+				duration: 1,
+				ease: 'power2.inOut'
+			})
 		}
 	}
 
@@ -50,26 +74,26 @@ const HeaderNestedMenu: FC = () => {
 					/>
 				</div>
 
-				{nestedOpen && (
-					<div className={styles['nested_menu__bottom']}>
-						<div className={`${common._container}`}>
-							<div className={styles['nested_menu__body']}>
-								<div className={styles['nested_menu__line']}></div>
-								{Object.entries(selectedNavKey).map(([key, value]) => (
-									<NestedMenuItem
-										navKey={key}
-										onLinkClick={() => {
-											changeActive(active)
-											setNestedOpen(false)
-										}}
-										navValue={value}
-										key={key}
-									/>
-								))}
-							</div>
+				<div
+					ref={nestedRef}
+					className={styles['nested_menu__bottom']}
+				>
+					<div className={`${common._container}`}>
+						<div className={styles['nested_menu__body']}>
+							<div className={styles['nested_menu__line']}></div>
+							{Object.entries(selectedNavKey).map(([key, value]) => (
+								<NestedMenuItem
+									navKey={key}
+									onLinkClick={() => {
+										changeActive(active)
+									}}
+									navValue={value}
+									key={key}
+								/>
+							))}
 						</div>
 					</div>
-				)}
+				</div>
 			</div>
 		</div>
 	)

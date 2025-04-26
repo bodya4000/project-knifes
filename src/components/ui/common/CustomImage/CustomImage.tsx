@@ -20,7 +20,7 @@ const CustomImage: FC<Props> = props => {
 			<img
 				width={props.width}
 				height={props.height}
-				src={props.src}
+				src={`${import.meta.env.BASE_URL}${props.src}`}
 				alt={props.alt}
 			/>
 		</div>

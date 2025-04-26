@@ -53,6 +53,8 @@
 		width: 100vw;
 		left: 0;
 		z-index: 200;
+		height: 0;
+		overflow: hidden;
 	}
 
 	&__body {
