@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { FC } from 'react'
 
-import styles from './CustomImage.module.scss';
+import styles from './CustomImage.module.scss'
 
 interface Props {
 	src: string;

@@ -36,6 +36,8 @@ body {
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
+	padding: 0;
+	margin: 0;
 }
 input,
 button,
@@ -87,3 +89,4 @@ h6 {
 	/* background-color: #141414; */
 	overflow: hidden;
 }
+
