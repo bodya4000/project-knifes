@@ -32,7 +32,7 @@ const KnifeBanner: FC = () => {
 		}
 	}, [])
 	return (
-		<section className={styles.welcome}>
+		<div className={styles.welcome}>
 			<div className={styles.welcome__bg_image}>
 				<IbgImage src="assets/images/welcome_bg.png" />
 			</div>
@@ -149,7 +149,7 @@ const KnifeBanner: FC = () => {
 					</Feature>
 				</div>
 			</div>
-		</section>
+		</div>
 	)
 }
 

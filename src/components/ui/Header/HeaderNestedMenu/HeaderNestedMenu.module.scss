@@ -3,6 +3,7 @@
 .nested_menu {
 	background-color: $black;
 	position: relative;
+	z-index: 10000000;
 	@media (max-width: 47.99em) {
 		display: none;
 		position: relative;
