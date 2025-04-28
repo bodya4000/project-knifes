@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { FC } from 'react'
 
-import CatalogHeader from '../../ui/ProductCatalog/CatalogHeader/CatalogHeader';
-import CatalogOptions from '../../ui/ProductCatalog/CatalogOptions/CatalogOptions';
-import CatalogProductListView from '../../ui/ProductCatalog/ProductListView/ProductListView';
-import styles from './ProductsCatalog.module.scss';
+import CatalogHeader from '../../components/ui/ProductCatalog/CatalogHeader/CatalogHeader'
+import CatalogOptions from '../../components/ui/ProductCatalog/CatalogOptions/CatalogOptions'
+import CatalogProductListView from '../../components/ui/ProductCatalog/ProductListView/ProductListView'
+import styles from './ProductsCatalog.module.scss'
 
 const ProductsCatalog: FC = () => {
 	return (
@@ -16,7 +16,7 @@ const ProductsCatalog: FC = () => {
 				</div>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default ProductsCatalog;
+export default ProductsCatalog

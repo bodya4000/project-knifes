@@ -1,5 +1,6 @@
-import { FC } from 'react';
-import BlackButton from '../../ui/common/BlackButton/BlackButton';
+import { FC } from 'react'
+
+import BlackButton from '../../components/ui/common/BlackButton/BlackButton'
 
 const ErrorPage: FC = () => {
 	return (
@@ -11,17 +12,20 @@ const ErrorPage: FC = () => {
 					margin: 'auto',
 					fontWeight: 500,
 					position: 'relative',
-					top: '50%',
+					top: '50%'
 				}}
 			>
 				Unexpected issue occurred, please be patient :) <br />
 				Be sure our specialists are fixing right now!
 				<div style={{ margin: '2rem auto', maxWidth: 300 }}>
-					<BlackButton to='..//' text='Click to go to main page' />
+					<BlackButton
+						to="..//"
+						text="Click to go to main page"
+					/>
 				</div>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default ErrorPage;
+export default ErrorPage

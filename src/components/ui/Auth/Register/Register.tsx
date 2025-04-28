@@ -1,22 +1,23 @@
-import { FC, useContext } from 'react';
-import { AuthPageContext } from '../../../screens/Auth/Auth';
-import CustomImage from '../../common/CustomImage/CustomImage';
-import CustomLink from '../../common/CustomLink/CustomLink';
-import RegisterForm from './Form/RegisterForm';
-import styles from './Register.module.scss';
+import { FC, useContext } from 'react'
+
+import { AuthPageContext } from '../../../../app/Auth/Auth'
+import CustomImage from '../../common/CustomImage/CustomImage'
+import CustomLink from '../../common/CustomLink/CustomLink'
+import RegisterForm from './Form/RegisterForm'
+import styles from './Register.module.scss'
 
 interface RegisterProps {
-	propName?: string;
+	propName?: string
 }
 
 const Register: FC<RegisterProps> = () => {
-	const { togglePage } = useContext(AuthPageContext);
+	const { togglePage } = useContext(AuthPageContext)
 	return (
 		<div className={styles.login}>
 			<div className={styles.login_body}>
 				<CustomImage
-					alt='Knives shop Logo'
-					src='assets/images/logo.svg'
+					alt="Knives shop Logo"
+					src="assets/images/logo.svg"
 					propsStyles={styles.login_logo}
 				/>
 
@@ -26,7 +27,7 @@ const Register: FC<RegisterProps> = () => {
 					<CustomLink
 						noRedirect={true}
 						propsStyles={styles.login_link}
-						link='/'
+						link="/"
 						onClick={togglePage}
 					>
 						Already have an account!
@@ -34,7 +35,7 @@ const Register: FC<RegisterProps> = () => {
 				</div>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Register;
+export default Register

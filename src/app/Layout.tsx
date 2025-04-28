@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import { Outlet } from 'react-router-dom'
 
-import useAuth from '../../hooks/useAuth'
-import common from '../../styles/common.module.scss'
-import { Footer } from '../ui'
-import Header from '../ui/Header/Header'
+import { Footer } from '../components/ui'
+import Header from '../components/ui/Header/Header'
+import useAuth from '../hooks/useAuth'
+import common from "../styles/common.module.scss"
 import { Auth } from './Auth/Auth'
 import ProductsCatalog from './ProductsCatalog/ProductsCatalog'
 
