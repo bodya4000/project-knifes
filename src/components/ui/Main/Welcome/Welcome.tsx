@@ -25,7 +25,7 @@ const Welcome = () => {
 	return (
 		<section
 			ref={welcomeRef}
-			style={{ height: '100vh' }}
+			style={{ height: '110vh' }}
 		>
 			{/* <CookBanner />
 			<KnifeBanner /> */}

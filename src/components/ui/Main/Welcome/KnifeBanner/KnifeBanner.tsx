@@ -9,6 +9,7 @@ import {
 	IbgImage,
 	Line
 } from '@/components'
+import { useIsMobile } from '@/hooks'
 
 import common from '../../../../../styles/common.module.scss'
 import styles from './KnifeBanner.module.module.scss'
@@ -16,6 +17,9 @@ import styles from './KnifeBanner.module.module.scss'
 const KnifeBanner: FC = () => {
 	const imageRef = useRef<HTMLDivElement | null>(null)
 	const titleRef = useRef<HTMLDivElement | null>(null)
+	const isMobile = useIsMobile()
+	console.log(isMobile);
+	
 
 	useEffect(() => {
 		if (imageRef.current && titleRef.current) {
@@ -61,7 +65,10 @@ const KnifeBanner: FC = () => {
 					${styles.welcome__container}`}
 			>
 				<div className={styles.welcome__top_container}>
-					<div ref={titleRef} className={styles.welcome__info}>
+					<div
+						ref={titleRef}
+						className={styles.welcome__info}
+					>
 						<h1 className={styles.welcome__title}>
 							<span>Online store of certified</span> Zlatoust knives
 						</h1>
@@ -122,32 +129,34 @@ const KnifeBanner: FC = () => {
 					</div>
 				</div>
 
-				<div className={styles.welcome__bottom_container}>
-					<Feature
-						imageSrc="assets/images/features/guarantee.svg"
-						alt="guarantee icon"
-					>
-						100% money-back guarantee
-					</Feature>
-					<Feature
-						imageSrc="assets/images/features/delivery.svg"
-						alt="delivery icon"
-					>
-						Delivery across Ukraine, Poland, and Germany
-					</Feature>
-					<Feature
-						imageSrc="assets/images/features/apply.svg"
-						alt="apply icon"
-					>
-						Ability to place an order without registration
-					</Feature>
-					<Feature
-						imageSrc="assets/images/features/sale.svg"
-						alt="sales icon"
-					>
-						Discounts for regular customers
-					</Feature>
-				</div>
+				{!isMobile && (
+					<div className={styles.welcome__bottom_container}>
+						<Feature
+							imageSrc="assets/images/features/guarantee.svg"
+							alt="guarantee icon"
+						>
+							100% money-back guarantee
+						</Feature>
+						<Feature
+							imageSrc="assets/images/features/delivery.svg"
+							alt="delivery icon"
+						>
+							Delivery across Ukraine, Poland, and Germany
+						</Feature>
+						<Feature
+							imageSrc="assets/images/features/apply.svg"
+							alt="apply icon"
+						>
+							Ability to place an order without registration
+						</Feature>
+						<Feature
+							imageSrc="assets/images/features/sale.svg"
+							alt="sales icon"
+						>
+							Discounts for regular customers
+						</Feature>
+					</div>
+				)}
 			</div>
 		</div>
 	)
