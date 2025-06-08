@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { Articles, KnifeCategories, Lanterns, Welcome } from '@/components/ui'
+import { Articles, KnifeCategories, Lanterns, Welcome } from '@/components'
 
 import styles from './Main.module.scss'
 

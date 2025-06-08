@@ -1,7 +1,7 @@
 import { FC, createContext, useState } from 'react'
 
-import Login from '../../components/ui/Auth/Login/Login'
-import Register from '../../components/ui/Auth/Register/Register'
+import Login from '../../components/Auth/Login/Login'
+import Register from '../../components/Auth/Register/Register'
 
 interface AuthPageContextType {
 	isLoginPage: boolean

@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
-import ProductDetailView from '../../components/ui/ProductDetail/ProducDetailView/ProductDetailView'
+import ProductDetailView from '../../components/ProductDetail/ProducDetailView/ProductDetailView'
 import useKnife from '../../hooks/useKnife'
 import useOptions from '../../hooks/useOptions'
 

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import BlackButton from '../../components/ui/common/BlackButton/BlackButton'
+import BlackButton from '../../components/common/BlackButton/BlackButton'
 
 const ErrorPage: FC = () => {
 	return (

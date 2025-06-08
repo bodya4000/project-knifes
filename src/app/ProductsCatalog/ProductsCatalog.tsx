@@ -1,8 +1,8 @@
 import { FC } from 'react'
 
-import CatalogHeader from '../../components/ui/ProductCatalog/CatalogHeader/CatalogHeader'
-import CatalogOptions from '../../components/ui/ProductCatalog/CatalogOptions/CatalogOptions'
-import CatalogProductListView from '../../components/ui/ProductCatalog/ProductListView/ProductListView'
+import CatalogHeader from '../../components/ProductCatalog/CatalogHeader/CatalogHeader'
+import CatalogOptions from '../../components/ProductCatalog/CatalogOptions/CatalogOptions'
+import CatalogProductListView from '../../components/ProductCatalog/ProductListView/ProductListView'
 import styles from './ProductsCatalog.module.scss'
 
 const ProductsCatalog: FC = () => {

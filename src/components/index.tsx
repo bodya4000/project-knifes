@@ -1,2 +1,5 @@
-export * from './ui'
-//export * from './screens';
+export * from './Auth'
+export * from './common'
+export * from './Footer'
+export * from './Header'
+export * from './Main'
